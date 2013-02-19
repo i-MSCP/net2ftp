@@ -1,0 +1,145 @@
+
+NET2FTP CREDITS!
+
+
+MAIN DEVELOPERS
+====================
+
+net2ftp is brought to you by:
+
+     David                             developer
+     Slynderdale                       developer
+     Jakub                             developer
+     WebDirector                       forum moderator & tester
+     @$!m (Asim)                       designer
+     Freddie                           developer
+     Dogan                             tester & translator
+
+
+TRANSLATORS
+====================
+
+net2ftp was translated into the following languages by:
+
+     sakrkuraish.netfirms.com                    Arabic
+     Jason Wong (pcdiscuss.com)                  Chinese Traditional
+     Heenji                                      Chinese Simplified
+     Jakub Vrána                                 Czech
+     Asbjørn Hansen                              Danish
+     Pierre Aronnax, Wouter, Sander              Dutch
+     Sebastien, Mathieu, Adrien Clerc, Stephane  French
+     Danny, Mike Haller, Michael Daffner         German
+     Zeevik Neuman                               Hebrew
+     Weisz János                                 Hungarian
+     codetown.net and fiorotto.com               Italian
+     Motonori Ando and Shinya Sato               Japanese
+     mastergigi                                  Polish
+     Vagner Marques                              Portugese
+     José Biskofski                              Spanish
+     Morozov Egor, Dmitry Banchshikov            Russian
+     backupnow.se                                Swedish
+     Murat Karagöz                               Turkish
+     crazysas                                    Ukrainian
+     Le Van Nha.c                                Vietnamese
+
+
+OTHER DEVELOPERS
+====================
+
+Other persons who have written code that was included in net2ftp:
+
+     Eric Mueller, Denis125 and Peter Listiak (zip functions)
+     Tim Perdue (server-side browser detection)
+     sponger (posting of code snippet on php.net on 10-Jun-2002 05:28)
+
+
+HELPFUL USERS
+====================
+
+Users who have submitted bug reports or helpful comments: 
+
+     Guangzu (the first user to send feedback)
+     Ryan (hints in 0.2)
+     eagleyes (hints in 0.2)
+     qM (browse bug in 0.2)
+     David (bug in SQL file in 0.2)
+     Kalle (PHP bug in function ftp_rawlist on Windows in 0.3)
+     Dan (max_upload_size difficult to find in 0.3, testing of net2ftp on windows)
+     Malte (fopen with option b in 0.3)
+     Ray (ftp_rmdir instead of ftp_delete in 0.3)
+     Ondrej (browse bug in 0.2, hint on saving the directory in the cookie)
+     Lars (hidden files option -a in 0.5)
+     David (. and .. entries on certain FTP sites, 0.5)
+     James (large file uploads configuration tips, 0.6)
+     Larry (ftp_chmod does not accept leading slashes, 0.61)
+     Topot (ftp_scanline ereg improvement, 0.62)
+     Decsifo (ascii/binary mode, sessions, 0.7)
+     Ajay, Dan and others (suggestions, 0.7)
+     Decsifo (/icons directory rename to /images, sessions, 0.71)
+     Ken (/temp directory was getting full, 0.71)
+     Angelo (upload archives, 0.72)
+     V@no (ftp_rawlist and Windows, 0.72)
+     Brandon (. and .. entries, 0.73)
+     Daffy (ftp_zipdirectory bug, 0.73)
+     Jean-Pierre (download bug, 0.80)
+     Rodeonet (many bug reports, 0.80)
+     Eeyore (FTP mode bug, 0.80)
+     31337n006, Ben and others (IE6 and HTTPS download bug, 0.80)
+     Oldiesman (bug report, 0.80)
+     Pierre (bug report and feedback, 0.80)
+     Enigma (bug when copying/moving a file to the same location, 0.81)
+     Victor and cerberos76 (extra CR when editing files, 0.81)
+     Danny (Netware ftp_rawlist scanning rule, 0.81)
+     Mitty (Login directory problem, 0.81)
+     Theoa (Suggestion on settings.inc.php, 0.81)
+     Mark and firecat53 (Zip files created by net2ftp are empty in Windows XP's unzipper, 0.82)
+     firecat53 (Problem with copy/move, 0.82)
+     firecat53, Freddie and others (Login admin panel problem, 0.82)
+     cerberos (thanks for pointing out the LGPL icons on kde-look.org, 0.82)
+     cerberos76, firecast53 (FTP mode cookie problem, 0.82)
+     kistler (Show size on Browse screen suggestion, 0.82)
+     Christian Doering (Typo in homepage.inc.php and global variable in authorizations.inc.php, 0.82)
+     Freddie (Missing authorizations.inc.php file, 0.82)
+     Rick, Mick (Copy to remote server, 0.82)
+     Pierre (Delete of directory, 0.82)
+     Freddie (Calculate size, 0.82)
+     oldiesmann, cerberos76 (Error 403)
+     maverick999 (Javascript problem with directories containing a ', 0.82)
+     browsingman (max_execution_time is -1 on some PHP configs, 0.82)
+     vorster (Sticky bit with capital T was not recognized in ftp_scanline, 0.82)
+     mamartin (Error message appended to downloaded file, 0.82)
+     fargo (Right-to-left languages, 0.90)
+     javs (Bug in Mambo template, 0.90)
+     Manuel Martin (deny from all in .htaccess, 0.90)
+     ALittleHelp (skin improvement, 0.90)
+     Shirley (file move bug, 0.90)
+     Zar (plugin integration bugs related to Geshi and Helene, 0.90)
+     SithLord (symlink problems, 0.91a)
+     sourcewalker (Japanese character encoding, 0.95)
+     nemoz and sdtr (Symlinks problem, 0.95)
+     Dmitry Banchshikov (logging to the system logger, Russian translation, 0.97)
+     TAN Chew Keong (unzip vulnerability, 0.97)
+     Johann Hoehn (improvement to followsymlink module, 0.99)
+     Michael Smith (XSS bug, 1.0)
+     Pablo Allois (glueDirectories function bug on shared windows directory, 1.0)
+     Mostafa Ghadamyari (idea to move directories and files by renaming them, 1.0)
+
+
+HELPFUL WEBSITES & TOOLS
+====================
+
+Sites which were particularly helpful:
+
+     www.php.net
+     www.phpbuilder.com
+     www.irt.org - excellent JavaScript FAQ
+     www.devguru.com - reference guides
+     www.w3schools.com - XHTML tutorial
+     www.w3.org - HTML validator service
+     www.kde-look.org - KDE Icons
+
+Tools which were particularly helpful:
+
+     Firefox - the web browser
+     HTML Validator - an extension for Firefox, based on Tidy
+

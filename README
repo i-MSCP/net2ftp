@@ -1,0 +1,21 @@
+net2ftp 1.0
+===========
+
+
+net2ftp is a web-based FTP client written in PHP. Lets explain this in detail. Web-based means that net2ftp runs on a
+web server, and that you use a browser (for example Internet Explorer or Mozilla). FTP is the communication method to
+access files on a remote computer. You need it to access your files on the account given by your provider to host your
+homepage. FTP is different from HTTP in that it was made specially to transfer (big) files. If a transfer is interrupted,
+with FTP you can resume it where it broke off, whereas with HTTP you can not. PHP is a programming language that is used
+to make dynamic websites.
+
+
+Copyright
+---------
+
+See the CREDITS.txt file.
+
+License
+---------
+
+See the LICENSE.txt file.

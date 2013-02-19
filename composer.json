@@ -1,0 +1,21 @@
+{
+	"name":"imscp/net2ftp",
+	"description":"iMSCP tools - Net2Ftp filemanager",
+	"version":"1.0",
+	"authors":[
+		{
+			"name":"PhpMyAdmin Team",
+			"homepage":"http://http://www.net2ftp.com/"
+		}
+	],
+	"license":"GPL-2.0",
+	"keywords":[
+		"imscp",
+		"net2ftp",
+		"filemanager",
+		"tools"
+	],
+	"require":{
+		"PHP":">=5.1"
+	}
+}
