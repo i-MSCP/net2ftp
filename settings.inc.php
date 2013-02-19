@@ -98,7 +98,7 @@ $net2ftp_settings["syslog_ident"] = "net2ftp";
 // upload, download, copy, move, search, view, edit
 // ----------------------------------------------------------------------------------
 
-$net2ftp_settings["max_filesize"]  = "10000000";  // in Bytes, default 10 MB
+$net2ftp_settings["max_filesize"]  = "50000000";  // in Bytes, default 10 MB
 
 // Note: IF YOU WANT TO ALLOW LARGE FILE UPLOADS, YOU MAY HAVE TO ADJUST
 //       THE FOLLOWING PARAMETERS:
@@ -112,7 +112,7 @@ $net2ftp_settings["max_filesize"]  = "10000000";  // in Bytes, default 10 MB
 // ----------------------------------------------------------------------------------
 
 // Switch consumption checking on or off
-$net2ftp_settings["check_consumption"] = "no";
+$net2ftp_settings["check_consumption"] = "yes";
 
 // Maximum data transfer volume per day (in Bytes)
 $net2ftp_settings["max_consumption_ipaddress_datatransfer"] = 50000000; // per IP address
@@ -123,8 +123,7 @@ $net2ftp_settings["max_consumption_ipaddress_executiontime"] = 1500; // per IP a
 $net2ftp_settings["max_consumption_ftpserver_executiontime"] = 1500; // per FTP server
 
 // Check the user's home directory?
-$net2ftp_settings["check_homedirectory"] = "no";
-
+$net2ftp_settings["check_homedirectory"] = "yes";
 
 // ----------------------------------------------------------------------------------
 // DO NOT CHANGE ANYTHING BELOW THIS LINE
