@@ -22,6 +22,18 @@
 					<input type="text" class="input" size="3" maxlength="5" name="ftpserverport2" value="21" />
 				</td>
 			</tr>
+<?php			if ($protocol["inputType"] == "select") { ?>
+				<tr>
+					<td><?php echo __("Protocol"); ?>:</td>
+					<td>
+						<select name="protocol">
+<?php						for ($i=1; $i<=sizeof($protocol["list"]); $i=$i+1) { ?>
+							<option value="<?php echo $protocol["list"][$i]; ?>" <?php echo $protocol["list"][$i]["selected"]; ?>><?php echo $protocol["list"][$i]; ?></option>
+<?php						} // end for ?>
+						</select>
+					</td>
+				</tr>
+<?php			} // end if ?>
 			<tr>
 				<td><?php echo __("Username"); ?>:</td>
 				<td><input type="text" class="input" name="username2" value="" /></td>

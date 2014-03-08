@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -320,6 +320,7 @@ function net2ftp_module_printBody() {
 // ------------------------------------
 // Passive mode
 // ------------------------------------
+
 	if     ($net2ftp_globals["passivemode"] == "yes")        { $passivemode["checked"] = "checked=\"checked\""; }
 	elseif ($net2ftp_globals["cookie_passivemode"] == "yes") { $passivemode["checked"] = "checked=\"checked\""; }
 	else                                                     { $passivemode["checked"] = ""; }
@@ -328,33 +329,31 @@ function net2ftp_module_printBody() {
 // ------------------------------------
 // Initial directory
 // ------------------------------------
+
 	if     (strlen($net2ftp_globals["directory"]) > 1)        { $directory = $net2ftp_globals["directory_html"]; }
 	elseif (strlen($net2ftp_globals["cookie_directory"]) > 1) { $directory = htmlEncode2($net2ftp_globals["cookie_directory"]); }
 	else                                                      { $directory = ""; }
 
 // ------------------------------------
-// SSL connect
+// Protocol
 // ------------------------------------
-	if (function_exists("ftp_ssl_connect") == false) { $sslconnect["inputType"] = "suppressed"; }
-	else {
-		$sslconnect["inputType"] = "checkbox";
-		if     ($net2ftp_globals["sslconnect"] == "yes")        { $sslconnect["checked"] = "checked=\"checked\""; }
-		elseif ($net2ftp_globals["cookie_sslconnect"] == "yes") { $sslconnect["checked"] = "checked=\"checked\""; }
-		else                                                    { $sslconnect["checked"] = ""; }
-	}
 
+	$protocol["inputType"] = "hidden";
+	$protocol["list"][1] = "FTP";
+	if (function_exists("ssh2_connect") == true)    { $protocol["list"][2] = "FTP over SSH2"; $protocol["inputType"] = "select"; }
+	if (function_exists("ftp_ssl_connect") == true) { $protocol["list"][3] = "FTP with SSL";  $protocol["inputType"] = "select"; }
 
 // ------------------------------------
 // Language
 // ------------------------------------	
-	$language_onchange = "document.forms['LoginForm'].state.value='login'; document.forms['LoginForm'].submit();";
 
+	$language_onchange = "document.forms['LoginForm'].state.value='login'; document.forms['LoginForm'].submit();";
 
 // ------------------------------------
 // Skin
-// ------------------------------------	
+// ------------------------------------
+	
 	$skin_onchange = "";
-
 	
 // ------------------------------------
 // FTP mode

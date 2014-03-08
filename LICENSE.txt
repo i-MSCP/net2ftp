@@ -65,23 +65,23 @@ Note: This application was slightly modified for use with net2ftp
 
 
 
-GESHI
+LUMINOUS
 ====================
 
-Directory: /plugins/geshi
-Website: http://qbnz.com/highlighter
-By: Nigel McNie (Oracle)
-License: GNU GENERAL PUBLIC LICENSE (see text below)
-
-
-
-CODEPRESS
-====================
-
-Directory: /plugins/codepress
-Website: http://codepress.fermads.net/
-By: Fernando M.A.d.S.
+Directory: /plugins/luminous
+Website: http://luminous.asgaard.co.uk
+By: Mark Asgaard
 License: GNU LESSER GENERAL PUBLIC LICENSE (see text below)
+
+
+
+ACE
+====================
+
+Directory: /plugins/ace
+Website: http://ace.ajax.org/
+By: Ace team
+License: BSD license
 
 
 
@@ -127,6 +127,40 @@ use of it on an unlimited number of servers.
 
 You DO NOT HAVE TO PURCHASE an additional license of JUpload, unless you want
 to use it in another product than net2ftp.
+
+
+
+SHINRA SKIN
+===========
+
+Website: http://www.luiszuno.com
+By: Luis Zuno
+License: creative commons 3.0 (http://creativecommons.org/licenses/by/3.0/)
+
+The Shinra skin uses the following images, icons or other files:
+
+JAVASCRIPT
+
+    jQuery http://jquery.com/
+    jqueryui . Jquery ui Home page.
+    jQuery Easing Plugin http://gsgd.co.uk/sandbox/jquery/easing/
+    Jquery tabs http://flowplayer.org/tools/tabs/
+    PrettyPhoto http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
+    DD_belatedPNG http://www.dillerdesign.com/experiment/DD_belatedPNG/
+    Superfish http://users.tpg.com.au/j_birch/plugins/superfish/
+    Google fonts api http://fonts.googleapis.com/
+    Scrollto http://flesler.blogspot.com
+    Nivo slider http://nivo.dev7studios.com
+    Poshytip http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/
+    tabs http://flowplayer.org/tools/tabs/
+    tweet http://tweet.seaofclouds.com/
+
+IMAGES
+
+    Social icons http://www.premiumpixels.com/
+    Knobs icons http://itweek.deviantart.com/art/Knob-Buttons-Toolbar-icons-73463960
+    Background images http://www.squidfingers.com/patterns/, http://backgrounds.mysitemyway.com, http://www.tutorial9.net/downloads/108-mono-icons-huge-set-of-minimal-icons/, http://www.webdesignerdepot.com
+
 
 
 STONEPHPCRYPT
@@ -179,7 +213,13 @@ Website: http://tinymce.moxiecode.com
 By: Moxiecode Systems AB
 License: GNU LIBRARY GENERAL PUBLIC LICENSE
 
+UBUNTU FONT
+====================
 
+Directory: not included with net2ftp
+Website: http://font.ubuntu.com
+By: Ubuntu team
+License: Ubuntu Font License (see http://font.ubuntu.com/licence)
 
 
 -------------------------------------------------------------------------------

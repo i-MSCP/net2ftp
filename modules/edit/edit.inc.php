@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -232,31 +232,34 @@ function net2ftp_module_printBody() {
 
 	}
 
-// Programming language (for CodePress syntax highlighting)
-	if ($textareaType == "codepress") {
+// Programming language (for Ace syntax highlighting)
+	if ($textareaType == "ace") {
+		// See examples at http://ace.ajax.org/build/kitchen-sink.html
+		$ace_theme = "eclipse";
 		$filename_extension = get_filename_extension($net2ftp_globals["entry"]);
-		if     ($filename_extension == "asp")        { $codepress_programming_language = "asp"; }
-		elseif ($filename_extension == "css")        { $codepress_programming_language = "css"; }
-		elseif ($filename_extension == "cgi")        { $codepress_programming_language = "perl"; }
-		elseif ($filename_extension == "htm")        { $codepress_programming_language = "html"; }
-		elseif ($filename_extension == "html")       { $codepress_programming_language = "html"; }
-		elseif ($filename_extension == "java")       { $codepress_programming_language = "java"; }
-		elseif ($filename_extension == "js")         { $codepress_programming_language = "javascript"; }
-		elseif ($filename_extension == "javascript") { $codepress_programming_language = "javascript"; }
-		elseif ($filename_extension == "pl")         { $codepress_programming_language = "perl"; }
-		elseif ($filename_extension == "perl")       { $codepress_programming_language = "perl"; }
-		elseif ($filename_extension == "php")        { $codepress_programming_language = "php"; }
-		elseif ($filename_extension == "phps")       { $codepress_programming_language = "php"; }
-		elseif ($filename_extension == "phtml")      { $codepress_programming_language = "php"; }
-		elseif ($filename_extension == "ruby")       { $codepress_programming_language = "ruby"; }
-		elseif ($filename_extension == "sql")        { $codepress_programming_language = "sql"; }
-		elseif ($filename_extension == "txt")        { $codepress_programming_language = "text"; }
-		else                                         { $codepress_programming_language = "generic"; }
-		$codepress_onclick = "text.toggleEditor();";
+		if     ($filename_extension == "abap")       { $ace_mode = "abap"; }
+		elseif ($filename_extension == "css")        { $ace_mode = "css"; }
+		elseif ($filename_extension == "cgi")        { $ace_mode = "perl"; }
+		elseif ($filename_extension == "htm")        { $ace_mode = "html"; }
+		elseif ($filename_extension == "html")       { $ace_mode = "html"; }
+		elseif ($filename_extension == "java")       { $ace_mode = "java"; }
+		elseif ($filename_extension == "js")         { $ace_mode = "javascript"; }
+		elseif ($filename_extension == "javascript") { $ace_mode = "javascript"; }
+		elseif ($filename_extension == "pl")         { $ace_mode = "perl"; }
+		elseif ($filename_extension == "perl")       { $ace_mode = "perl"; }
+		elseif ($filename_extension == "php")        { $ace_mode = "php"; }
+		elseif ($filename_extension == "phps")       { $ace_mode = "php"; }
+		elseif ($filename_extension == "phtml")      { $ace_mode = "php"; }
+		elseif ($filename_extension == "py")         { $ace_mode = "python"; }
+		elseif ($filename_extension == "ruby")       { $ace_mode = "ruby"; }
+		elseif ($filename_extension == "sh")         { $ace_mode = "sh"; }
+		elseif ($filename_extension == "sql")        { $ace_mode = "sql"; }
+		elseif ($filename_extension == "txt")        { $ace_mode = "text"; }
+		elseif ($filename_extension == "xml")        { $ace_mode = "xml"; }
+		else                                         { $ace_mode = "text"; }
 	}
 	else {
-		$codepress_programming_language = "";
-		$codepress_onclick = "";
+		$ace_mode = "";
 	}
 
 // -------------------------------------------------------------------------
@@ -330,7 +333,7 @@ function net2ftp_module_printBody() {
 			$text_splitted = splitHtml($text, $textareaType);
 		}
 // For other textareas, join the HTML
-		elseif (($textareaType == "plain" || $textareaType == "codepress") && $text == "" && isset($text_splitted["top"]) == true) {
+		elseif (($textareaType == "plain" || $textareaType == "ace") && $text == "" && isset($text_splitted["top"]) == true) {
 			$text  = $text_splitted["top"];
 			$text .= $text_splitted["middle"];
 			$text .= $text_splitted["bottom"];
@@ -424,9 +427,10 @@ function net2ftp_module_printBody() {
 		$text_splitted["bottom"] = htmlspecialchars($text_splitted["bottom"], ENT_QUOTES);
 	}
 
-// CodePress
-	elseif ($textareaType == "codepress") {
+// Ace
+	elseif ($textareaType == "ace") {
 		$text = htmlspecialchars($text, ENT_QUOTES);
+		$ace_onclick = "document.forms['" . $formname . "'].text.value=editor.getValue();";
 	}
 
 

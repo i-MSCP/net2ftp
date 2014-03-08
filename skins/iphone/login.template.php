@@ -33,6 +33,15 @@
 		<div class="label"><?php echo __("Password"); ?></div>
 		<input type="password" name="password" value="<?php echo $password; ?>" autocorrect="off" autocapitalize="off" style="width: 80%;" />
 
+<?php /* ----- Protocol ----- */ ?>
+<?php		if ($protocol["inputType"] == "select") { ?>
+		<div class="label"><?php echo __("Protocol"); ?></div>
+		<select name="protocol">
+<?php		for ($i=1; $i<=sizeof($protocol["list"]); $i=$i+1) { ?>
+			<option value="<?php echo $protocol["list"][$i]; ?>" <?php echo $protocol["list"][$i]["selected"]; ?>><?php echo $protocol["list"][$i]; ?></option>
+<?php		} // end for ?>
+<?php		} // end if ?>
+
 <?php /* ----- Login button ----- */ ?>
 		<input type="hidden" name="state" value="browse" />
 		<input type="hidden" name="state2" value="main" />

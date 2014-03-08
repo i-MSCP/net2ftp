@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -104,6 +104,20 @@ function net2ftp_module_printCss() {
 
 // Include
 	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"". $net2ftp_globals["application_rootdir_url"] . "/skins/" . $net2ftp_globals["skin"] . "/css/main.css.php?ltr=" . __("ltr") . "&amp;image_url=" . urlEncode2($net2ftp_globals["image_url"]) . "\" />\n";
+
+// CSS for Luminous syntax highlighter
+	$filename_extension = get_filename_extension($net2ftp_globals["entry"]);
+	if     (getFileType($net2ftp_globals["entry"]) == "IMAGE") { $filetype = "image"; }
+	elseif ($filename_extension == "swf")                      { $filetype = "flash"; }
+	else                                                       { $filetype = "text"; }
+	if ($filetype == "text") {
+		luminous::set("cache", FALSE);
+		luminous::set("format", "html");
+		luminous::set("line-numbers", TRUE);
+		luminous::set("relative-root", $net2ftp_globals["application_rootdir_url"] . "/plugins/luminous/");
+//		luminous::set("theme", "luminous_dark");
+		echo luminous::head_html();
+	}
 	
 } // end net2ftp_printCssInclude
 
@@ -187,20 +201,20 @@ function net2ftp_module_printBody() {
 		$title = __("View file %1\$s", $net2ftp_globals["entry"]);
 
 // ------------------------
-// geshi_text
+// luminous_text
 // ------------------------
 		setStatus(2, 10, __("Reading the file"));
-		$geshi_text = ftp_readfile("", $net2ftp_globals["directory"], $net2ftp_globals["entry"]);
+		$luminous_text = ftp_readfile("", $net2ftp_globals["directory"], $net2ftp_globals["entry"]);
 		if ($net2ftp_result["success"] == false)  { return false; }
 
 // ------------------------
-// geshi_language
+// luminous_language
 // ------------------------
-		$geshi_language = "";
+		$luminous_language = "";
 
 		$list_language_extensions = array(
 // List the most popular languages first for speed reasons 
-			'html4strict' => array('html', 'htm'),
+			'html' => array('html', 'htm'),
 			'javascript'  => array('js'),
 			'css'  => array('css'),
 			'php'  => array('php', 'php5', 'phtml', 'phps'),
@@ -208,68 +222,37 @@ function net2ftp_module_printBody() {
 			'sql'  => array('sql'),
 			'java' => array('java'),
 // Other languages in alphabetic order 
-			'actionscript' => array('as'),
 			'ada' => array('a', 'ada', 'adb', 'ads'),
-			'apache' => array('conf'),
-			'asm' => array('ash', 'asm'),
+			'as' => array('as'),
 			'asp' => array('asp'),
-			'bash' => array('sh'),
-			'c' => array('c', 'h'),
-			'c_mac' => array('c'),
-			'caddcl' => array(),
-			'cadlisp' => array(),
 			'cpp' => array('cpp'),
-			'csharp' => array(),
-			'd' => array(''),
-			'delphi' => array('dpk'),
-			'diff' => array(''),
-			'email' => array('eml', 'mbox'),
-			'lisp' => array('lisp'),
-			'lua' => array('lua'),
-			'matlab' => array(),
-			'mpasm' => array(),
-			'nsis' => array(),
-			'objc' => array(),
-			'oobas' => array(),
-			'oracle8' => array(),
-			'pascal' => array('pas'),
+			'csharp' => array('csharp'),
+			'diff' => array('diff'),
+			'go' => array('go'),
+			'latex' => array('latex'),
+			'matlab' => array('matlab'),
 			'python' => array('py'),
-			'qbasic' => array('bi'),
-			'smarty' => array('tpl'),
+			'rails' => array('rails'),
+			'ruby' => array('ruby'),
+			'sql' => array('sql'),
 			'vb' => array('bas'),
-			'vbnet' => array(),
-			'vhdl' => array(),
-			'visualfoxpro' => array(),
+			'vim' => array('vim'),
 			'xml' => array('xml')
 		);
 
 		while(list($language, $extensions) = each($list_language_extensions)) {
 			if (in_array($filename_extension, $extensions)) {
-				$geshi_language = $language;
+				$luminous_language = $language;
 				break;
 			}
 		} 
 
 // ------------------------
-// geshi_path
-// ------------------------
-		$geshi_path = NET2FTP_APPLICATION_ROOTDIR . "/plugins/geshi/geshi/";
-		
-// ------------------------
-// Call geshi
+// Call luminous
 // ------------------------
 		setStatus(4, 10, __("Parsing the file"));
 
-		$geshi = new GeSHi($geshi_text, $geshi_language, $geshi_path);
-		$geshi->set_encoding(__("iso-8859-1"));
-		$geshi->set_header_type(GESHI_HEADER_PRE);
-		$geshi->enable_line_numbers(GESHI_FANCY_LINE_NUMBERS, 10);
-//		$geshi->enable_classes();
-		$geshi->set_overall_style('border: 2px solid #d0d0d0; background-color: #f6f6f6; color: #000066; padding: 10px;', true);
-		$geshi->set_link_styles(GESHI_LINK, 'color: #000060;');
-		$geshi->set_link_styles(GESHI_HOVER, 'background-color: #f0f000;');
-		$geshi->set_tab_width(4); 
-		$geshi_text = $geshi->parse_code();
+		$luminous_text = luminous::highlight($luminous_language, $luminous_text, FALSE);
 	}
 
 // -------------------------------------------------------------------------

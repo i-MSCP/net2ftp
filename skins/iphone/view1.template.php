@@ -3,8 +3,8 @@
 
 <?php /* ----- Text ----- */ ?>
 <?php if ($filetype == "text") { ?>
-		<div style="font-size: 80%;"><?php echo $geshi_text; ?></div>
-		<div style="font-size: 80%; margin-top: 10px; text-align: center;"><?php echo __("Syntax highlighting powered by <a href=\"http://geshi.org\">GeSHi</a>"); ?></div>
+		<div style="font-size: 80%;"><?php echo $luminous_text; ?></div>
+		<div style="font-size: 80%; margin-top: 10px; text-align: center;"><?php echo __("Syntax highlighting powered by <a href=\"http://luminous.asgaard.co.uk\">Luminous</a>"); ?></div>
 
 <?php } // end if
 

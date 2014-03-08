@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -149,6 +149,12 @@ if (isset($_POST["password"]) == true) {
 	$_SESSION["net2ftp_password_encrypted_" . $net2ftp_globals["ftpserver"] . $net2ftp_globals["username"]] = encryptPassword(trim($_POST["password"]));
 	$_SESSION["net2ftp_session_id_old"]  = $_SESSION["net2ftp_session_id_new"];
 }
+// From the login_small form (from a bookmark)
+elseif (isset($_GET["password_encrypted"]) == true) {
+	$net2ftp_globals["password_encrypted"]  = validatePasswordEncrypted($_GET["password_encrypted"]);
+	$_SESSION["net2ftp_password_encrypted_" . $net2ftp_globals["ftpserver"] . $net2ftp_globals["username"]] = $net2ftp_globals["password_encrypted"];
+	$_SESSION["net2ftp_session_id_old"]  = $_SESSION["net2ftp_session_id_new"];
+}
 // From the openlaszlo skin
 elseif (isset($_POST["password_encrypted"]) == true) {
 	$net2ftp_globals["password_encrypted"]  = trim($_POST["password_encrypted"]);
@@ -200,14 +206,14 @@ $net2ftp_globals["passivemode_url"]  = urlEncode2($net2ftp_globals["passivemode"
 $net2ftp_globals["passivemode_js"]   = javascriptEncode2($net2ftp_globals["passivemode"]);
 
 // ----------------------------------------------
-// SSL connect
+// Protocol (FTP, FTP with SSL, FTP over SSH)
 // ----------------------------------------------
-if     (isset($_POST["sslconnect"]) == true) { $net2ftp_globals["sslconnect"] = validateSslconnect($_POST["sslconnect"]); }
-elseif (isset($_GET["sslconnect"]) == true)  { $net2ftp_globals["sslconnect"] = validateSslconnect($_GET["sslconnect"]); }
-else                                         { $net2ftp_globals["sslconnect"] = validateSslconnect(""); }
-$net2ftp_globals["sslconnect_html"] = htmlEncode2($net2ftp_globals["sslconnect"]);
-$net2ftp_globals["sslconnect_url"]  = urlEncode2($net2ftp_globals["sslconnect"]);
-$net2ftp_globals["sslconnect_js"]   = javascriptEncode2($net2ftp_globals["sslconnect"]);
+if     (isset($_POST["protocol"]) == true) { $net2ftp_globals["protocol"] = validateProtocol($_POST["protocol"]); }
+elseif (isset($_GET["protocol"]) == true)  { $net2ftp_globals["protocol"] = validateProtocol($_GET["protocol"]); }
+else                                       { $net2ftp_globals["protocol"] = validateProtocol(""); }
+$net2ftp_globals["protocol_html"] = htmlEncode2($net2ftp_globals["protocol"]);
+$net2ftp_globals["protocol_url"]  = urlEncode2($net2ftp_globals["protocol"]);
+$net2ftp_globals["protocol_js"]   = javascriptEncode2($net2ftp_globals["protocol"]);
 
 // ----------------------------------------------
 // View mode
@@ -366,8 +372,8 @@ if (isset($_COOKIE["net2ftpcookie_ftpmode"])       == true) { $net2ftp_globals["
 else                                                        { $net2ftp_globals["cookie_ftpmode"]       = ""; }
 if (isset($_COOKIE["net2ftpcookie_passivemode"])   == true) { $net2ftp_globals["cookie_passivemode"]   = validatePassivemode($_COOKIE["net2ftpcookie_passivemode"]); }
 else                                                        { $net2ftp_globals["cookie_passivemode"]   = ""; }
-if (isset($_COOKIE["net2ftpcookie_sslconnect"])    == true) { $net2ftp_globals["cookie_sslconnect"]    = validateSslconnect($_COOKIE["net2ftpcookie_sslconnect"]); }
-else                                                        { $net2ftp_globals["cookie_sslconnect"]    = ""; }
+if (isset($_COOKIE["net2ftpcookie_protocol"])      == true) { $net2ftp_globals["cookie_protocol"]      = validateProtocol($_COOKIE["net2ftpcookie_protocol"]); }
+else                                                        { $net2ftp_globals["cookie_protocol"]      = ""; }
 if (isset($_COOKIE["net2ftpcookie_viewmode"])      == true) { $net2ftp_globals["cookie_viewmode"]      = validateViewmode($_COOKIE["net2ftpcookie_viewmode"]); }
 else                                                        { $net2ftp_globals["cookie_viewmode"]      = ""; }
 if (isset($_COOKIE["net2ftpcookie_directory"])     == true) { $net2ftp_globals["cookie_directory"]     = validateDirectory($_COOKIE["net2ftpcookie_directory"]); }
@@ -667,7 +673,7 @@ function validateSkin($skin) {
 		elseif (getBrowser("platform") == "iPhone") { return "iphone"; }
 		elseif (getBrowser("platform") == "Mobile") { return "mobile"; }
 		elseif (isset($skinArray[$net2ftp_settings["default_skin"]]) == true) { return $net2ftp_settings["default_skin"]; }
-		else                                        { return "blue"; }
+		else                                                                  { return "shinra"; }
 	}
 
 } // end validateSkin
@@ -748,18 +754,20 @@ function validatePassivemode($passivemode) {
 // **                                                                                  **
 // **                                                                                  **
 
-function validateSslconnect($sslmode) {
+function validateProtocol($protocol) {
 
 // --------------
-// This function validates the SSL mode
+// This function validates the protocol
 // --------------
 
-	if ($sslmode != "yes") {
-		$sslmode = "no";
+	if ($protocol == "FTP" || $protocol == "FTP-SSL" || $protocol == "FTP-SSH") {
+		return $protocol;
 	}
-	return $sslmode;
+	else {
+		return "FTP";
+	}
 
-} // end validateSslconnect
+} // end validateProtocol
 
 // **                                                                                  **
 // **                                                                                  **
@@ -1127,7 +1135,7 @@ function validateTextareaType($textareaType) {
 	if (	$textareaType != "plain" && 
 		$textareaType != "ckeditor" && 
 		$textareaType != "tinymce" && 
-		$textareaType != "codepress") {
+		$textareaType != "ace") {
 		$textareaType = "plain";
 	}
 	return $textareaType;

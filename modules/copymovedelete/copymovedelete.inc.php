@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -194,6 +194,8 @@ function net2ftp_module_printBody() {
 	else                                         { $net2ftp_globals["username2"]      = ""; }
 	if (isset($_POST["password2"]) == true)      { $net2ftp_globals["password2"]      = validatePassword($_POST["password2"]); }
 	else                                         { $net2ftp_globals["password2"]      = ""; }
+	if (isset($_POST["protocol2"]) == true)      { $net2ftp_globals["protocol2"]      = validateProtocol($_POST["protocol2"]); }
+	else                                         { $net2ftp_globals["protocol2"]      = ""; }
 
 // -------------------------------------------------------------------------
 // Variables for all screens
@@ -222,7 +224,13 @@ function net2ftp_module_printBody() {
 	if ($net2ftp_globals["screen"] == 1) {
 
 // Next screen
-	$nextscreen = 2;
+		$nextscreen = 2;
+
+// Protocol
+		$protocol["inputType"] = "hidden";
+		$protocol["list"][1] = "FTP";
+		if (function_exists("ssh2_connect") == true)    { $protocol["list"][2] = "FTP over SSH2"; $protocol["inputType"] = "select"; }
+		if (function_exists("ftp_ssl_connect") == true) { $protocol["list"][3] = "FTP with SSL";  $protocol["inputType"] = "select"; }
 
 	} // end if
 

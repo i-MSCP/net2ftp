@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -193,7 +193,7 @@ function printLoginInfo() {
 	echo "<input type=\"hidden\" name=\"skin\"               value=\"" . htmlEncode2($net2ftp_globals["skin"]) . "\" />\n";
 	echo "<input type=\"hidden\" name=\"ftpmode\"            value=\"" . htmlEncode2($net2ftp_globals["ftpmode"]) . "\" />\n";
 	echo "<input type=\"hidden\" name=\"passivemode\"        value=\"" . htmlEncode2($net2ftp_globals["passivemode"]) . "\" />\n";
-	echo "<input type=\"hidden\" name=\"sslconnect\"         value=\"" . htmlEncode2($net2ftp_globals["sslconnect"]) . "\" />\n";
+	echo "<input type=\"hidden\" name=\"protocol\"           value=\"" . htmlEncode2($net2ftp_globals["protocol"]) . "\" />\n";
 	echo "<input type=\"hidden\" name=\"viewmode\"           value=\"" . htmlEncode2($net2ftp_globals["viewmode"]) . "\" />\n";
 	echo "<input type=\"hidden\" name=\"sort\"               value=\"" . htmlEncode2($net2ftp_globals["sort"]) . "\" />\n";
 	echo "<input type=\"hidden\" name=\"sortorder\"          value=\"" . htmlEncode2($net2ftp_globals["sortorder"]) . "\" />\n";
@@ -231,7 +231,7 @@ function printLoginInfo_javascript() {
 	echo "	d.writeln('<input type=\"hidden\" name=\"skin\"               value=\"" . javascriptEncode2($net2ftp_globals["skin"]) . "\" />');\n";
 	echo "	d.writeln('<input type=\"hidden\" name=\"ftpmode\"            value=\"" . javascriptEncode2($net2ftp_globals["ftpmode"]) . "\" />');\n";
 	echo "	d.writeln('<input type=\"hidden\" name=\"passivemode\"        value=\"" . javascriptEncode2($net2ftp_globals["passivemode"]) . "\" />');\n";
-	echo "	d.writeln('<input type=\"hidden\" name=\"sslconnect\"         value=\"" . javascriptEncode2($net2ftp_globals["sslconnect"]) . "\" />');\n";
+	echo "	d.writeln('<input type=\"hidden\" name=\"protocol\"           value=\"" . javascriptEncode2($net2ftp_globals["protocol"]) . "\" />');\n";
 	echo "	d.writeln('<input type=\"hidden\" name=\"viewmode\"           value=\"" . javascriptEncode2($net2ftp_globals["viewmode"]) . "\" />');\n";
 	echo "	d.writeln('<input type=\"hidden\" name=\"sort\"               value=\"" . javascriptEncode2($net2ftp_globals["sort"]) . "\" />');\n";
 	echo "	d.writeln('<input type=\"hidden\" name=\"sortorder\"          value=\"" . javascriptEncode2($net2ftp_globals["sortorder"]) . "\" />');\n";
@@ -271,7 +271,7 @@ function printPHP_SELF($case) {
 	$skin               = urlEncode2($net2ftp_globals["skin"]);
 	$ftpmode            = urlEncode2($net2ftp_globals["ftpmode"]);
 	$passivemode        = urlEncode2($net2ftp_globals["passivemode"]);
-	$sslconnect         = urlEncode2($net2ftp_globals["sslconnect"]);
+	$protocol           = urlEncode2($net2ftp_globals["protocol"]);
 	$viewmode           = urlEncode2($net2ftp_globals["viewmode"]);
 	$sort               = urlEncode2($net2ftp_globals["sort"]);
 	$sortorder          = urlEncode2($net2ftp_globals["sortorder"]);
@@ -300,27 +300,30 @@ function printPHP_SELF($case) {
 
 // Append further parameters
 	if     ($case == "actions") {
-		$URL .= "ftpserver=$ftpserver&amp;ftpserverport=$ftpserverport&amp;username=$username&amp;language=$language&amp;skin=$skin&amp;ftpmode=$ftpmode&amp;passivemode=$passivemode&amp;sslconnect=$sslconnect&amp;viewmode=$viewmode&amp;sort=$sort&amp;sortorder=$sortorder";
+		$URL .= "ftpserver=$ftpserver&amp;ftpserverport=$ftpserverport&amp;username=$username&amp;language=$language&amp;skin=$skin&amp;ftpmode=$ftpmode&amp;passivemode=$passivemode&amp;protocol=$protocol&amp;viewmode=$viewmode&amp;sort=$sort&amp;sortorder=$sortorder";
 	}
 // Bookmark with password: go straight to the bookmarked state
 	elseif ($case == "bookmark_withpw") {
-		$URL .= "ftpserver=$ftpserver&amp;amp;ftpserverport=$ftpserverport&amp;amp;username=$username&amp;amp;password_encrypted=$password_encrypted&amp;amp;language=$language&amp;amp;skin=$skin&amp;amp;ftpmode=$ftpmode&amp;amp;passivemode=$passivemode&amp;amp;sslconnect=$sslconnect&amp;amp;viewmode=$viewmode&amp;amp;sort=$sort&amp;amp;sortorder=$sortorder&amp;amp;state=$state_html&amp;amp;state2=$state2_html&amp;amp;directory=$directory_html&amp;amp;entry=$entry_html";
+		$URL .= "ftpserver=$ftpserver&amp;amp;ftpserverport=$ftpserverport&amp;amp;username=$username&amp;amp;password_encrypted=$password_encrypted&amp;amp;language=$language&amp;amp;skin=$skin&amp;amp;ftpmode=$ftpmode&amp;amp;passivemode=$passivemode&amp;amp;protocol=$protocol&amp;amp;viewmode=$viewmode&amp;amp;sort=$sort&amp;amp;sortorder=$sortorder&amp;amp;state=$state_html&amp;amp;state2=$state2_html&amp;amp;directory=$directory_html&amp;amp;entry=$entry_html";
 	}
 // Bookmark without password: go first to the login_small state to enter the password
 	elseif ($case == "bookmark_withoutpw") {
-		$URL .= "ftpserver=$ftpserver&amp;amp;ftpserverport=$ftpserverport&amp;amp;username=$username&amp;amp;language=$language&amp;amp;skin=$skin&amp;amp;ftpmode=$ftpmode&amp;amp;passivemode=$passivemode&amp;amp;sslconnect=$sslconnect&amp;amp;viewmode=$viewmode&amp;amp;sort=$sort&amp;amp;sortorder=$sortorder&amp;amp;state=login_small&amp;amp;state2=bookmark&amp;amp;go_to_state=$state_html&amp;amp;go_to_state2=$state2_html&amp;amp;directory=$directory_html&amp;amp;entry=$entry_html";
+		$URL .= "ftpserver=$ftpserver&amp;amp;ftpserverport=$ftpserverport&amp;amp;username=$username&amp;amp;language=$language&amp;amp;skin=$skin&amp;amp;ftpmode=$ftpmode&amp;amp;passivemode=$passivemode&amp;amp;protocol=$protocol&amp;amp;viewmode=$viewmode&amp;amp;sort=$sort&amp;amp;sortorder=$sortorder&amp;amp;state=login_small&amp;amp;state2=bookmark&amp;amp;go_to_state=$state_html&amp;amp;go_to_state2=$state2_html&amp;amp;directory=$directory_html&amp;amp;entry=$entry_html";
 	}
 // Jupload java applet: the cookie information is added to the page using javascript (/skins/blue/jupload1.template.php)
 	elseif ($case == "jupload") {
-		$URL .= "ftpserver=$ftpserver&amp;ftpserverport=$ftpserverport&amp;username=$username&amp;language=$language&amp;skin=$skin&amp;ftpmode=$ftpmode&amp;passivemode=$passivemode&amp;sslconnect=$sslconnect&amp;directory=$directory_html&amp;state=jupload&amp;screen=2";
+		$URL .= "ftpserver=$ftpserver&amp;ftpserverport=$ftpserverport&amp;username=$username&amp;language=$language&amp;skin=$skin&amp;ftpmode=$ftpmode&amp;passivemode=$passivemode&amp;protocol=$protocol&amp;directory=$directory_html&amp;state=jupload&amp;screen=2";
 	}
 	elseif ($case == "view") {
-		$URL .= "ftpserver=$ftpserver&amp;ftpserverport=$ftpserverport&amp;username=$username&amp;language=$language&amp;skin=$skin&amp;ftpmode=$ftpmode&amp;passivemode=$passivemode&amp;sslconnect=$sslconnect&amp;viewmode=$viewmode&amp;sort=$sort&amp;sortorder=$sortorder&amp;state=$state_html&amp;state2=image&amp;directory=$directory_html&amp;entry=$entry_html";
+		$URL .= "ftpserver=$ftpserver&amp;ftpserverport=$ftpserverport&amp;username=$username&amp;language=$language&amp;skin=$skin&amp;ftpmode=$ftpmode&amp;passivemode=$passivemode&amp;protocol=$protocol&amp;viewmode=$viewmode&amp;sort=$sort&amp;sortorder=$sortorder&amp;state=$state_html&amp;state2=image&amp;directory=$directory_html&amp;entry=$entry_html";
 	}
 	elseif ($case == "createDirectoryTreeWindow") {
 		$URL = $net2ftp_globals["application_rootdir_url"] . "/index.php";
 	}
-
+// Change skin
+	elseif ($case == "defaultskin") {
+		$URL .= "ftpserver=$ftpserver&amp;ftpserverport=$ftpserverport&amp;username=$username&amp;language=$language&amp;skin=" . $net2ftp_settings["default_skin"] . "&amp;ftpmode=$ftpmode&amp;passivemode=$passivemode&amp;protocol=$protocol&amp;viewmode=$viewmode&amp;sort=$sort&amp;sortorder=$sortorder&amp;state=$state_html&amp;state2=$state2_html&amp;directory=$directory_html&amp;entry=$entry_html";
+	}
 	return $URL;
 
 } // End function printPHP_SELF

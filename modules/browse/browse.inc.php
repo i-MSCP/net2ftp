@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -36,7 +36,7 @@ function net2ftp_module_sendHttpHeaders() {
 	setcookie("net2ftpcookie_skin",          $net2ftp_globals["skin"],          $cookie_expire);
 	setcookie("net2ftpcookie_ftpmode",       $net2ftp_globals["ftpmode"],       $cookie_expire);
 	setcookie("net2ftpcookie_passivemode",   $net2ftp_globals["passivemode"],   $cookie_expire);
-	setcookie("net2ftpcookie_sslconnect",    $net2ftp_globals["sslconnect"],    $cookie_expire);
+	setcookie("net2ftpcookie_protocol",      $net2ftp_globals["protocol"],      $cookie_expire);
 	setcookie("net2ftpcookie_viewmode",      $net2ftp_globals["viewmode"],      $cookie_expire);
 	setcookie("net2ftpcookie_sort",          $net2ftp_globals["sort"],          $cookie_expire);
 	setcookie("net2ftpcookie_sortorder",     $net2ftp_globals["sortorder"],     $cookie_expire);

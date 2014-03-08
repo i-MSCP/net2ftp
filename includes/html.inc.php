@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -131,13 +131,13 @@ function getBrowser($what) {
 			$BROWSER_VERSION = $regs[1];
 			$BROWSER_AGENT = 'IE';
 		}
+		elseif (ereg('Chrome/([0-9]{1,2}.[0-9]{1,4}.[0-9]{1,4}.[0-9]{1,4})', $http_user_agent, $regs)) {
+			$BROWSER_VERSION = $regs[1];
+			$BROWSER_AGENT = 'Chrome';
+		}
 		elseif (ereg('Safari/([0-9].[0-9]{1,2})', $http_user_agent, $regs)) {
 			$BROWSER_VERSION = $regs[1];
 			$BROWSER_AGENT = 'Safari';
-		}
-		elseif (ereg('Chrome/([0-9].[0-9]{1,2})', $http_user_agent, $regs)) {
-			$BROWSER_VERSION = $regs[1];
-			$BROWSER_AGENT = 'Chrome';
 		}
 		elseif (ereg('Opera ([0-9].[0-9]{1,2})', $http_user_agent, $regs)) {
 			$BROWSER_VERSION = $regs[1];

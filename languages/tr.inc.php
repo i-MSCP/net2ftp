@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -108,7 +108,7 @@ $net2ftp_messages["Comparing the 2 files"] = "2 Dosyayi karsilastiriyor";
 $net2ftp_messages["Printing the comparison"] = "Karsilastirmayi yazdiriyor";
 $net2ftp_messages["Sending FTP command %1\$s of %2\$s"] = "FTP komutu gönderiyor %1\$s - %2\$s";
 $net2ftp_messages["Getting archive %1\$s of %2\$s from the FTP server"] = "FTP sunucusundan arsiv paketini aliyor %1\$s - %2\$s";
-$net2ftp_messages["Creating a temporary directory on the FTP server"] = "FTP sunucusunda gecici dizin yaratiyor";           //dizin: klasör
+$net2ftp_messages["Creating a temporary directory on the FTP server"] = "FTP sunucusunda gecici dizin oluþturuyor";           //dizin: klasör
 $net2ftp_messages["Setting the permissions of the temporary directory"] = "Gecici diznin iznini ayarliyor";
 $net2ftp_messages["Copying the net2ftp installer script to the FTP server"] = "FTP sunucusuna net2ftp yükleyici yazilimini kopyaliyor";
 $net2ftp_messages["Script finished in %1\$s seconds"] = "Yazilim %1\$s saniyede bitti";
@@ -196,7 +196,9 @@ $net2ftp_messages["Go to the login page"] = "Giriþ sayfasýna git";
 // -------------------------------------------------------------------------
 
 // ftp_openconnection()
-$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">FTP module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this FTP module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">php.net</a><br />"] = " <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">PHP'nin FTP modülü</a> yüklü deðil.<br /><br /> Bu websitesinin yöneticisi bu FTP modülünü yüklemelidir. Yükleme talimatlarý <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">php.net</a><br />te veriliyor";
+$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">FTP module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">php.net</a><br />"] = "The <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">FTP module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">php.net</a><br />";
+$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/function.ftp-ssl-connect.php\" target=\"_blank\">FTP and/or OpenSSL modules of PHP</a> is not installed.<br /><br /> The administrator of this website should install these modules. Installation instructions are given on php.net: <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">here for FTP</a>, and <a href=\"http://www.php.net/manual/en/openssl.installation.php\" target=\"_blank\">here for OpenSSL</a><br />"] = "The <a href=\"http://www.php.net/manual/en/function.ftp-ssl-connect.php\" target=\"_blank\">FTP and/or OpenSSL modules of PHP</a> is not installed.<br /><br /> The administrator of this website should install these modules. Installation instructions are given on php.net: <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">here for FTP</a>, and <a href=\"http://www.php.net/manual/en/openssl.installation.php\" target=\"_blank\">here for OpenSSL</a><br />";
+$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/function.ssh2-sftp.php\" target=\"_blank\">SSH2 module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ssh2.installation.php\" target=\"_blank\">php.net</a><br />"] = "The <a href=\"http://www.php.net/manual/en/function.ssh2-sftp.php\" target=\"_blank\">SSH2 module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ssh2.installation.php\" target=\"_blank\">php.net</a><br />";
 $net2ftp_messages["Unable to connect to FTP server <b>%1\$s</b> on port <b>%2\$s</b>.<br /><br />Are you sure this is the address of the FTP server? This is often different from that of the HTTP (web) server. Please contact your ISP helpdesk or system administrator for help.<br />"] = "FTP sunucusuna <b>%1\$s</b> portunda <b>%2\$s</b> baðlanamýyor.<br /><br />FTP sunucusunun adresinin bu olduðundan emin misiniz? Bu sýklýkla HTTP (web) sunucusununkinden farklýdýr. Lütfen yardým için ISS yardým masanýzla ya da sistem yöneticinizle iletiþim kurun.<br />";
 $net2ftp_messages["Unable to login to FTP server <b>%1\$s</b> with username <b>%2\$s</b>.<br /><br />Are you sure your username and password are correct? Please contact your ISP helpdesk or system administrator for help.<br />"] = "FTP sunucusuna <b>%1\$s</b> kullanýcý adýyla <b>%2\$s</b> giriþ yapamýyor.<br /><br />Kullanýcý adýnýzýn ve þifrenizin doðru olduðundan emin misiniz? Lütfen yardým için ISS yardým masanýzla ya da sistem yöneticinizle iletiþim kurun.<br />";
 $net2ftp_messages["Unable to switch to the passive mode on FTP server <b>%1\$s</b>."] = "FTP sunucusunda <b>%1\$s</b> pasif moda geçemiyor.";    //switch: ?
@@ -223,10 +225,10 @@ $net2ftp_messages["Unable to delete the directory <b>%1\$s</b>"] = "<b>%1\$s</b>
 $net2ftp_messages["Unable to delete the file <b>%1\$s</b>"] = "<b>%1\$s</b> dosyayý silemiyor";
 
 // ftp_newdirectory()
-$net2ftp_messages["Unable to create the directory <b>%1\$s</b>"] = "<b>%1\$s</b> dizini yaratamýyor";
+$net2ftp_messages["Unable to create the directory <b>%1\$s</b>"] = "<b>%1\$s</b> dizini oluþturamýyor";
 
 // ftp_readfile()
-$net2ftp_messages["Unable to create the temporary file"] = "Geçici dosya yaratamýyor";
+$net2ftp_messages["Unable to create the temporary file"] = "Geçici dosya oluþturamýyor";
 $net2ftp_messages["Unable to get the file <b>%1\$s</b> from the FTP server and to save it as temporary file <b>%2\$s</b>.<br />Check the permissions of the %3\$s directory.<br />"] = "FTP sunucusundan <b>%1\$s</b> dosyasýný alamýyor ve <b>%2\$s</b> geçici dosya olarak kaydedemiyor.<br /> %3\$s dizininin izinlerini denetleyin.<br />";
 $net2ftp_messages["Unable to open the temporary file. Check the permissions of the %1\$s directory."] = "Geçici dosyayý açamýyor. %1\$s dizininin izinlerini denetleyin.";
 $net2ftp_messages["Unable to read the temporary file"] = "Geçici dosyayý okuyamýyor";
@@ -234,7 +236,7 @@ $net2ftp_messages["Unable to close the handle of the temporary file"] = "Geçici 
 $net2ftp_messages["Unable to delete the temporary file"] = "Geçici dosyayý silemiyor";
 
 // ftp_writefile()
-$net2ftp_messages["Unable to create the temporary file. Check the permissions of the %1\$s directory."] = "Geçici dosya yaratamýyor. %1\$s dizininin izinlerini denetleyin.";
+$net2ftp_messages["Unable to create the temporary file. Check the permissions of the %1\$s directory."] = "Geçici dosya oluþturamýyor. %1\$s dizininin izinlerini denetleyin.";
 $net2ftp_messages["Unable to open the temporary file. Check the permissions of the %1\$s directory."] = "Geçici dosyayý açamýyor. %1\$s dizininin izinlerini denetleyin.";
 $net2ftp_messages["Unable to write the string to the temporary file <b>%1\$s</b>.<br />Check the permissions of the %2\$s directory."] = "<b>%1\$s</b> geçici dosyaya diziyi yazamýyor.<br />%1\$s dizininin izinlerini denetleyin.";
 $net2ftp_messages["Unable to close the handle of the temporary file"] = "Geçici dosyanýn idaresini kapatamýyor";    //handle: ?
@@ -246,8 +248,8 @@ $net2ftp_messages["Processing directory <b>%1\$s</b>"] = "<b>%1\$s</b> dizinini 
 $net2ftp_messages["The target directory <b>%1\$s</b> is the same as or a subdirectory of the source directory <b>%2\$s</b>, so this directory will be skipped"] = "<b>%1\$s</b> hedef dizini <b>%2\$s</b> kaynak dizininin aynýsý veya bir alt dizini , bu yüzden bu dizin atlanýlacak";
 $net2ftp_messages["The directory <b>%1\$s</b> contains a banned keyword, so this directory will be skipped"] = "The directory <b>%1\$s</b> contains a banned keyword,bu yüzden bu dizin atlanýlacak";
 $net2ftp_messages["The directory <b>%1\$s</b> contains a banned keyword, aborting the move"] = "<b>%1\$s</b> dizini yasaklý bir anahtar kelime içeriyor, taþýmayý iptal ediyor";
-$net2ftp_messages["Unable to create the subdirectory <b>%1\$s</b>. It may already exist. Continuing the copy/move process..."] = "<b>%1\$s</b> alt dizini yaratamýyor. Önceden var olabilir. Kopyalama/taþýma iþlemine devam ediyor...";
-$net2ftp_messages["Created target subdirectory <b>%1\$s</b>"] = "Hedef alt dizin <b>%1\$s</b> yaratýldý";
+$net2ftp_messages["Unable to create the subdirectory <b>%1\$s</b>. It may already exist. Continuing the copy/move process..."] = "<b>%1\$s</b> alt dizini oluþturamýyor. Önceden var olabilir. Kopyalama/taþýma iþlemine devam ediyor...";
+$net2ftp_messages["Created target subdirectory <b>%1\$s</b>"] = "Hedef alt dizin <b>%1\$s</b> oluþturuldu";
 $net2ftp_messages["The directory <b>%1\$s</b> could not be selected, so this directory will be skipped"] = "Dizin <b>%1\$s</b> seçilemiyor,bu yüzden bu dizin atlanýlacak";
 $net2ftp_messages["Unable to delete the subdirectory <b>%1\$s</b> - it may not be empty"] = "Alt dizini <b>%1\$s</b> silemiyor - boþ olmayabilir";
 $net2ftp_messages["Deleted subdirectory <b>%1\$s</b>"] = "Alt dizin <b>%1\$s</b> silindi";
@@ -263,7 +265,8 @@ $net2ftp_messages["The file <b>%1\$s</b> is too big to be moved, aborting the mo
 $net2ftp_messages["Unable to copy the file <b>%1\$s</b>"] = "Dosyayý <b>%1\$s</b> kopyalayamýyor";
 $net2ftp_messages["Copied file <b>%1\$s</b>"] = "Dosyayý <b>%1\$s</b> kopyaladý";
 $net2ftp_messages["Unable to move the file <b>%1\$s</b>, aborting the move"] = "Dosyayý <b>%1\$s</b> taþýyamýyor, taþýmayý iptal ediyor";
-$net2ftp_messages["Moved file <b>%1\$s</b>"] = "Dosyayý <b>%1\$s</b> taþýyamýyor";
+$net2ftp_messages["Unable to move the file <b>%1\$s</b>"] = "Unable to move the file <b>%1\$s</b>";
+$net2ftp_messages["Moved file <b>%1\$s</b>"] = "Dosya <b>%1\$s</b> taþýndý";
 $net2ftp_messages["Unable to delete the file <b>%1\$s</b>"] = "<b>%1\$s</b> dosyayý silemiyor";
 $net2ftp_messages["Deleted file <b>%1\$s</b>"] = "Dosyayý <b>%1\$s</b> sildi";
 $net2ftp_messages["All the selected directories and files have been processed."] = "Tüm seçili dosya ve dizinler iþleme alýndý.";
@@ -285,7 +288,7 @@ $net2ftp_messages["Unable to delete the temporary file"] = "Geçici dosyayý silem
 $net2ftp_messages["Unable to send the file to the browser"] = "Tarayýcýya dosyayý gönderemiyor";
 
 // ftp_zip()
-$net2ftp_messages["Unable to create the temporary file"] = "Geçici dosya yaratamýyor";
+$net2ftp_messages["Unable to create the temporary file"] = "Geçici dosya oluþturamýyor";
 $net2ftp_messages["The zip file has been saved on the FTP server as <b>%1\$s</b>"] = "Zip arþiv paketi dosyasý, FTP sunucusuna <b>%1\$s</b> olarak kaydedildi";
 $net2ftp_messages["Requested files"] = "Ýstenilen dosyalar";
 
@@ -323,8 +326,8 @@ $net2ftp_messages["Archive <b>%1\$s</b> was not processed because its filename e
 $net2ftp_messages["Unable to extract the files and directories from the archive"] = "Arþiv paketinden dosya ve dizinleri çýkartamýyor";
 $net2ftp_messages["Archive contains filenames with ../ or ..\\ - aborting the extraction"] = "Archive contains filenames with ../ or ..\\ - aborting the extraction";
 $net2ftp_messages["Could not unzip entry %1\$s (error code %2\$s)"] = "Could not unzip entry %1\$s (error code %2\$s)";
-$net2ftp_messages["Created directory %1\$s"] = "Dizini %1\$s yarattý";
-$net2ftp_messages["Could not create directory %1\$s"] = "Dizini %1\$s yaratamýyor";
+$net2ftp_messages["Created directory %1\$s"] = "Dizini %1\$s oluþturuldu";
+$net2ftp_messages["Could not create directory %1\$s"] = "Dizini %1\$s oluþturamýyor";
 $net2ftp_messages["Copied file %1\$s"] = "Dosyayý %1\$s kopyaladý";
 $net2ftp_messages["Could not copy file %1\$s"] = "Dosyayý %1\$s kopyalayamýyor";
 $net2ftp_messages["Unable to delete the temporary directory"] = "Geçici dizini silemiyor";
@@ -469,14 +472,15 @@ $net2ftp_messages["Default"] = "Varsayýlan";
 
 
 // -------------------------------------------------------------------------
-// /skins/[skin]/footer.template.php and statusbar.template.php
+// /skins/[skin]/header.template.php and footer.template.php
 // -------------------------------------------------------------------------
 $net2ftp_messages["Help Guide"] = "Yardým Rehberi";
 $net2ftp_messages["Forums"] = "Forumlar";
 $net2ftp_messages["License"] = "Lisans";
 $net2ftp_messages["Powered by"] = "Katkýlarýyla";
 $net2ftp_messages["You are now taken to the net2ftp forums. These forums are for net2ftp related topics only - not for generic webhosting questions."] = "Þimdi net2ftp forumlarýna götürülüyorsunuz. Bu forumlar, sadece net2ftp alakalý konular içindir - genel web barýndýrma sorularý için deðil.";
-
+$net2ftp_messages["Standard"] = "Standard";
+$net2ftp_messages["Mobile"] = "Mobile";
 
 // -------------------------------------------------------------------------
 // Admin module
@@ -497,7 +501,7 @@ $net2ftp_messages["Empty logs"] = "Boþ kayýtlar";
 $net2ftp_messages["View logs"] = "Kayýtlarý görüntüle";
 $net2ftp_messages["Go"] = "Git";
 $net2ftp_messages["Setup MySQL tables"] = "MySQL tablolarýný kur";
-$net2ftp_messages["Create the MySQL database tables"] = "MySQL veritabaný tablolarý yarat";
+$net2ftp_messages["Create the MySQL database tables"] = "MySQL veritabaný tablolarý oluþtur";
 
 } // end admin
 
@@ -586,7 +590,7 @@ $net2ftp_messages["Check if there are new or obsolete messages"] = "Yeni ya da e
 
 $net2ftp_messages["Beta functions"] = "Beta iþlevleri";
 $net2ftp_messages["Send a site command to the FTP server"] = "FTP sunucusuna bir site komutu gönder";
-$net2ftp_messages["Apache: password-protect a directory, create custom error pages"] = "Apache: þifre-korumalý dizin, tasarlanmýþ hata sayfalarý yarat";   //custom: ?
+$net2ftp_messages["Apache: password-protect a directory, create custom error pages"] = "Apache: þifre-korumalý dizin, tasarlanmýþ hata sayfalarý oluþtur";   //custom: ?
 $net2ftp_messages["MySQL: execute an SQL query"] = "MySQL: SQL sorgusu gerçekleþtir";
 
 
@@ -662,7 +666,7 @@ $net2ftp_messages["yes"] = "evet";
 $net2ftp_messages["no - please install it!"] = "hayýr - lütfen onu yükle!";
 
 $net2ftp_messages["Checking the permissions of the directory on the web server: a small file will be written to the /temp folder and then deleted."] = "Web sunucunuzdaki dizinin iznini denetliyor: küçük bir dosya /temp klasörüne yazýlacak ve sonra silinecek.";
-$net2ftp_messages["Creating filename: "] = "Dosya adý yaratýyor: ";
+$net2ftp_messages["Creating filename: "] = "Dosya adý oluþturuyor: ";
 $net2ftp_messages["OK. Filename: %1\$s"] = "TAMAM. Dosya adý: %1\$s";
 $net2ftp_messages["not OK"] = "TAMAM deðil";
 $net2ftp_messages["OK"] = "TAMAM";
@@ -731,7 +735,7 @@ $net2ftp_messages["New file"] = "Yeni Dosya";
 $net2ftp_messages["HTML templates"] = "HTML þablonlarý";
 $net2ftp_messages["Upload"] = "Yükle";
 $net2ftp_messages["Java Upload"] = "Java ile Yükle";
-$net2ftp_messages["Flash Upload"] = "Flash Upload";
+$net2ftp_messages["Flash Upload"] = "Flash ile Yükle";
 $net2ftp_messages["Install"] = "Kur";
 $net2ftp_messages["Advanced"] = "Geliþmiþ";
 $net2ftp_messages["Copy"] = "Kopyala";
@@ -749,8 +753,8 @@ $net2ftp_messages["Go"] = "Git";
 $net2ftp_messages["Transform selected entries: "] = "Seçili giriþleri dönüþtür: ";
 $net2ftp_messages["Transform selected entry: "] = "Seçili giriþi dönüþtür: ";
 $net2ftp_messages["Make a new subdirectory in directory %1\$s"] = "%1\$s dizininde yeni bir alt dizin yap";
-$net2ftp_messages["Create a new file in directory %1\$s"] = "%1\$s dizininde yeni bir dosya yarat";
-$net2ftp_messages["Create a website easily using ready-made templates"] = "Hazýr-yapýlmýþ þablon kullanarak kolayca bir websitesi yaratýn";
+$net2ftp_messages["Create a new file in directory %1\$s"] = "%1\$s dizininde yeni bir dosya oluþtur";
+$net2ftp_messages["Create a website easily using ready-made templates"] = "Hazýr-yapýlmýþ þablon kullanarak kolayca bir websitesi oluþturun";
 $net2ftp_messages["Upload new files in directory %1\$s"] = "%1\$s dizinine yeni dosya yükle";
 $net2ftp_messages["Upload directories and files using a Java applet"] = "Java aplet kullanarak dizin ve dosyalarý yükle";
 $net2ftp_messages["Upload files using a Flash applet"] = "Upload files using a Flash applet";
@@ -916,7 +920,7 @@ $net2ftp_messages["Processing the entries:"] = "Giriþi iþleme alýyor:";
 // EasyWebsite module
 if ($net2ftp_globals["state"] == "easyWebsite") {
 // -------------------------------------------------------------------------
-$net2ftp_messages["Create a website in 4 easy steps"] = "4 kolay adýmda bir websitesi yarat";
+$net2ftp_messages["Create a website in 4 easy steps"] = "4 kolay adýmda bir websitesi oluþtur";
 $net2ftp_messages["Template overview"] = "Þablon önizleme";
 $net2ftp_messages["Template details"] = "Þablon detaylarý";
 $net2ftp_messages["Files are copied"] = "Dosyalar kopyalandý";
@@ -951,8 +955,8 @@ $net2ftp_messages["Internet Explorer: right-click on the link and choose \"Add t
 $net2ftp_messages["Netscape, Mozilla, Firefox: right-click on the link and choose \"Bookmark This Link...\""] = "Netscape, Mozilla, Firefox: baðlantýya sað týklayýn ve \"Yer imlerine ekle...\"seçin";
 
 // ftp_copy_local2ftp
-$net2ftp_messages["WARNING: Unable to create the subdirectory <b>%1\$s</b>. It may already exist. Continuing..."] = "UYARI: <b>%1\$s</b> alt dizinini yaratamýyor. Önceden var olabilir. Devam ediyor...";
-$net2ftp_messages["Created target subdirectory <b>%1\$s</b>"] = "Hedef alt dizin <b>%1\$s</b> yaratýldý";
+$net2ftp_messages["WARNING: Unable to create the subdirectory <b>%1\$s</b>. It may already exist. Continuing..."] = "UYARI: <b>%1\$s</b> alt dizinini oluþturamýyor. Önceden var olabilir. Devam ediyor...";
+$net2ftp_messages["Created target subdirectory <b>%1\$s</b>"] = "Hedef alt dizin <b>%1\$s</b> oluþturuldu";
 $net2ftp_messages["WARNING: Unable to copy the file <b>%1\$s</b>. Continuing..."] = "UYARI: <b>%1\$s</b> dosyasýný kopyalayamýyor. Devam ediyor...";
 $net2ftp_messages["Copied file <b>%1\$s</b>"] = "Dosyayý <b>%1\$s</b> kopyaladý";
 }
@@ -1059,18 +1063,10 @@ $net2ftp_messages["Should this link not be correct, enter the URL manually in yo
 if ($net2ftp_globals["state"] == "jupload") {
 // -------------------------------------------------------------------------
 $net2ftp_messages["Upload directories and files using a Java applet"] = "Java aplet kullanarak dizin ve dosyalarý yükle";
-$net2ftp_messages["Number of files:"] = "Dosyalarýn sayýsý:";
-$net2ftp_messages["Size of files:"] = "Dosyalarýn boyutu:";
-$net2ftp_messages["Add"] = "Ekle";
-$net2ftp_messages["Remove"] = "Kaldýr";
-$net2ftp_messages["Upload"] = "Yükle";
-$net2ftp_messages["Add files to the upload queue"] = "Dosyalarý yükleme kuyruðuna ekle";
-$net2ftp_messages["Remove files from the upload queue"] = "Dosyalarý yükleme kuyruðundan kaldýr";
-$net2ftp_messages["Upload the files which are in the upload queue"] = "Yükleme kuyruðunda olan dosyalarý yükleyin";
-$net2ftp_messages["Maximum server space exceeded. Please select less/smaller files."] = "Maximum sunucu alanýný aþtý. Lütfen daha az/daha küçük dosya seçin.";
-$net2ftp_messages["Total size of the files is too big. Please select less/smaller files."] = "Dosyalarýn toplam boyutu çok büyük. Lütfen daha az/daha küçük dosya seçin.";
-$net2ftp_messages["Total number of files is too high. Please select fewer files."] = "Dosyalarýn toplam sayýsý çok yüksek. Lütfen daha az dosya seçin.";
-$net2ftp_messages["Note: to use this applet, Sun's Java plugin must be installed (version 1.4 or newer)."] = "Not: bu apleti kullanmak için, Sun'ýn Java eklentisi yüklenmiþ olmalý (sürüm 1.4 veya daha yeni).";
+$net2ftp_messages["Your browser does not support applets, or you have disabled applets in your browser settings."] = "Your browser does not support applets, or you have disabled applets in your browser settings.";
+$net2ftp_messages["To use this applet, please install the newest version of Sun's java. You can get it from <a href=\"http://www.java.com/\">java.com</a>. Click on Get It Now."] = "To use this applet, please install the newest version of Sun's java. You can get it from <a href=\"http://www.java.com/\">java.com</a>. Click on Get It Now.";
+$net2ftp_messages["The online installation is about 1-2 MB and the offline installation is about 13 MB. This 'end-user' java is called JRE (Java Runtime Environment)."] = "The online installation is about 1-2 MB and the offline installation is about 13 MB. This 'end-user' java is called JRE (Java Runtime Environment).";
+$net2ftp_messages["Alternatively, use net2ftp's normal upload or upload-and-unzip functionality."] = "Alternatively, use net2ftp's normal upload or upload-and-unzip functionality.";
 
 } // end jupload
 
@@ -1116,6 +1112,7 @@ $net2ftp_messages["Calculate the size of directories and files."] = "Dosya ve di
 $net2ftp_messages["FTP server"] = "FTP sunucusu";
 $net2ftp_messages["Example"] = "Örnek";
 $net2ftp_messages["Port"] = "Port";
+$net2ftp_messages["Protocol"] = "Protocol";
 $net2ftp_messages["Username"] = "Kullanýcý adý";
 $net2ftp_messages["Password"] = "Þifre";
 $net2ftp_messages["Anonymous"] = "Anonim";
@@ -1174,11 +1171,11 @@ $net2ftp_messages["Click here to close this window"] = "Bu pencereyi kapatmak iç
 // New directory module
 if ($net2ftp_globals["state"] == "newdir") {
 // -------------------------------------------------------------------------
-$net2ftp_messages["Create new directories"] = "Yeni dizinler yarat";
-$net2ftp_messages["The new directories will be created in <b>%1\$s</b>."] = "Yeni dizinler, <b>%1\$s</b>de yaratýlacaktýr.";
+$net2ftp_messages["Create new directories"] = "Yeni dizinler oluþtur";
+$net2ftp_messages["The new directories will be created in <b>%1\$s</b>."] = "Yeni dizinler, <b>%1\$s</b>de oluþturulacaktýr.";
 $net2ftp_messages["New directory name:"] = "Yeni dizin adý:";
-$net2ftp_messages["Directory <b>%1\$s</b> was successfully created."] = "Dizin <b>%1\$s</b> baþarýlý bir þekilde yaratýldý.";
-$net2ftp_messages["Directory <b>%1\$s</b> could not be created."] = "Dizin <b>%1\$s</b> yaratýlamýyor.";
+$net2ftp_messages["Directory <b>%1\$s</b> was successfully created."] = "Dizin <b>%1\$s</b> baþarýlý bir þekilde oluþturuldu.";
+$net2ftp_messages["Directory <b>%1\$s</b> could not be created."] = "Dizin <b>%1\$s</b> oluþturamýyor.";
 
 } // end newdir
 
@@ -1230,34 +1227,9 @@ $net2ftp_messages["To set a common target directory, enter that target directory
 $net2ftp_messages["Note: the target directory must already exist before anything can be copied into it."] = "Not: içerisine herhangi bir þey kopyalanmadan önce, hedef dizin önceden var olmalý.";
 $net2ftp_messages["Unzip archive <b>%1\$s</b> to:"] = "Arþiv paketlerini <b>%1\$s</b> þuna aç:";
 $net2ftp_messages["Target directory:"] = "Hedef dizin:";
-$net2ftp_messages["Use folder names (creates subdirectories automatically)"] = "Klasör adlarýný kullan (otomatik alt dizinler yaratýr)";
+$net2ftp_messages["Use folder names (creates subdirectories automatically)"] = "Klasör adlarýný kullan (otomatik alt dizinler oluþturur)";
 
 } // end unzip
-
-
-// -------------------------------------------------------------------------
-// Update file module
-if ($net2ftp_globals["state"] == "updatefile") {
-// -------------------------------------------------------------------------
-$net2ftp_messages["Update file"] = "Dosyayý güncelle";
-$net2ftp_messages["<b>WARNING: THIS FUNCTION IS STILL IN EARLY DEVELOPMENT. USE IT ONLY ON TEST FILES! YOU HAVE BEEN WARNED!"] = "<b>UYARI: BU ÝÞLEV HALA ÝLK GELÝÞTÝRME AÞAMASINDA. BUNU SADECE TEST DOSYALARI ÜZERÝNDE KULLANIN! UYARILIYORSUNUZ!";
-$net2ftp_messages["Known bugs: - erases tab characters - doesn't work well with big files (> 50kB) - was not tested yet on files containing non-standard characters</b>"] = "Bilinen hatalar: - tab karakterlerini siler - büyük dosyalar ile iyi çalýþmýyor (> 50kB) -  henüz standart olmayan karakterler içeren dosyalar üzerinde test edilmemiþtir</b>";
-$net2ftp_messages["This function allows you to upload a new version of the selected file, to view what are the changes and to accept or reject each change. Before anything is saved, you can edit the merged files."] = "Bu iþlev,seçili dosyanýn yeni sürümünü yüklemenize, deðiþikliklerin ne olduðunu görüntülemenize ve her bir deðiþikliði kabul veya reddetmenize olanak saðlar. Herhangi bir þey kaydedilmeden önce, birleþtirilmiþ dosyayý düzenleyebilirsiniz.";          //merged= ?
-$net2ftp_messages["Old file:"] = "Eski dosya:";
-$net2ftp_messages["New file:"] = "Yeni dosya:";
-$net2ftp_messages["Restrictions:"] = "Kýsýtlamalar:";
-$net2ftp_messages["The maximum size of one file is restricted by net2ftp to <b>%1\$s kB</b> and by PHP to <b>%2\$s</b>"] = "Bir dosyanýn maksimum boyutu net2ftp tarafýndan <b>%1\$s kB</b>a ve PHP tarafýndan <b>%2\$s</b>a kýsýtlanmýþtýr ";
-$net2ftp_messages["The maximum execution time is <b>%1\$s seconds</b>"] = "Maksimum uygulama süresi <b>%1\$s saniye</b>dir";
-$net2ftp_messages["The FTP transfer mode (ASCII or BINARY) will be automatically determined, based on the filename extension"] = "FTP aktarým modu (ASCII veya BINARY) dosya uzantýsýna baðlý olarak ,otomatik belirlenecektir";
-$net2ftp_messages["If the destination file already exists, it will be overwritten"] = "Eðer hedef dosya zaten varsa, üzerine yazýlacaktýr";
-$net2ftp_messages["You did not provide any files or archives to upload."] = "Yüklemek için herhangi bir dosya ya da arþiv paketi saðlamadýnýz.";
-$net2ftp_messages["Unable to delete the new file"] = "Yeni dosyayý silemiyor";
-
-// printComparisonSelect()
-$net2ftp_messages["Please wait..."] = "Lütfen bekleyin...";
-$net2ftp_messages["Select lines below, accept or reject changes and submit the form."] = "Aþaðýdaki satýrlarý seçin, deðiþiklikleri kabul ya da reddedin ve formu gönderin.";
-
-} // end updatefile
 
 
 // -------------------------------------------------------------------------
@@ -1270,7 +1242,7 @@ $net2ftp_messages["Archives"] = "Arþiv paketleri";
 $net2ftp_messages["Files entered here will be transferred to the FTP server."] = "Buraya girilen dosyalar FTP sunucusuna aktarýlacaktýr.";
 $net2ftp_messages["Archives entered here will be decompressed, and the files inside will be transferred to the FTP server."] = "Buraya girilen arþiv paketleri açýlacaktýr ve içerisindeki dosyalar FTP sunucusuna aktarýlacaktýr.";
 $net2ftp_messages["Add another"] = "Bir baþkasýný ekle";
-$net2ftp_messages["Use folder names (creates subdirectories automatically)"] = "Klasör adlarýný kullan (otomatik alt dizinler yaratýr)";
+$net2ftp_messages["Use folder names (creates subdirectories automatically)"] = "Klasör adlarýný kullan (otomatik alt dizinler oluþturur)";
 
 $net2ftp_messages["Choose a directory"] = "Dizin seç";
 $net2ftp_messages["Please wait..."] = "Lütfen bekleyin...";
@@ -1294,7 +1266,7 @@ $net2ftp_messages["Upload more files and archives"] = "Daha fazla arþiv paketi v
 if ($net2ftp_globals["state"] == "upload" || $net2ftp_globals["state"] == "jupload") {
 // -------------------------------------------------------------------------
 $net2ftp_messages["Restrictions:"] = "Kýsýtlamalar:";
-$net2ftp_messages["The maximum size of one file is restricted by net2ftp to <b>%1\$s kB</b> and by PHP to <b>%2\$s</b>"] = "Bir dosyanýn maksimum boyutu net2ftp tarafýndan <b>%1\$s kB</b>a ve PHP tarafýndan <b>%2\$s</b>a kýsýtlanmýþtýr ";
+$net2ftp_messages["The maximum size of one file is restricted by net2ftp to <b>%1\$s</b> and by PHP to <b>%2\$s</b>"] = "The maximum size of one file is restricted by net2ftp to <b>%1\$s</b> and by PHP to <b>%2\$s</b>";
 $net2ftp_messages["The maximum execution time is <b>%1\$s seconds</b>"] = "Maksimum uygulama süresi <b>%1\$s saniye</b>dir";
 $net2ftp_messages["The FTP transfer mode (ASCII or BINARY) will be automatically determined, based on the filename extension"] = "FTP aktarým modu (ASCII veya BINARY) dosya uzantýsýna baðlý olarak ,otomatik belirlenecektir";
 $net2ftp_messages["If the destination file already exists, it will be overwritten"] = "Eðer hedef dosya zaten varsa, üzerine yazýlacaktýr";
@@ -1314,7 +1286,7 @@ $net2ftp_messages["View Macromedia ShockWave Flash movie %1\$s"] = "Macromedia S
 $net2ftp_messages["Image"] = "Resim";
 
 // /skins/[skin]/view1.template.php
-$net2ftp_messages["Syntax highlighting powered by <a href=\"http://geshi.org\">GeSHi</a>"] = "Sözdizim vurgulama <a href=\"http://geshi.org\">GeSHi</a> ile güçlendirilmiþtir";
+$net2ftp_messages["Syntax highlighting powered by <a href=\"http://luminous.asgaard.co.uk\">Luminous</a>"] = "Sözdizim vurgulama <a href=\"http://luminous.asgaard.co.uk\">Luminous</a> ile güçlendirilmiþtir";
 $net2ftp_messages["To save the image, right-click on it and choose 'Save picture as...'"] = "Resmi kaydetmek için, üzerine sað týklayýn ve 'Resmi Farklý Kaydet...'i seçin";
 
 } // end view

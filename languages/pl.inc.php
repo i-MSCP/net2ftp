@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -196,7 +196,9 @@ $net2ftp_messages["Go to the login page"] = "Przejd¼ do strony logowania";
 // -------------------------------------------------------------------------
 
 // ftp_openconnection()
-$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">FTP module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this FTP module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">php.net</a><br />"] = "<a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">Modu³ FTP ala PHP</a> nie jest zainstalowany.<br /><br /> Administrator tej strony powinien zainstalowaæ ten modu³. Instrukcja instalacji znajduje siê pod adresem <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">php.net</a><br />";
+$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">FTP module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">php.net</a><br />"] = "The <a href=\"http://www.php.net/manual/en/ref.ftp.php\" target=\"_blank\">FTP module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">php.net</a><br />";
+$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/function.ftp-ssl-connect.php\" target=\"_blank\">FTP and/or OpenSSL modules of PHP</a> is not installed.<br /><br /> The administrator of this website should install these modules. Installation instructions are given on php.net: <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">here for FTP</a>, and <a href=\"http://www.php.net/manual/en/openssl.installation.php\" target=\"_blank\">here for OpenSSL</a><br />"] = "The <a href=\"http://www.php.net/manual/en/function.ftp-ssl-connect.php\" target=\"_blank\">FTP and/or OpenSSL modules of PHP</a> is not installed.<br /><br /> The administrator of this website should install these modules. Installation instructions are given on php.net: <a href=\"http://www.php.net/manual/en/ftp.installation.php\" target=\"_blank\">here for FTP</a>, and <a href=\"http://www.php.net/manual/en/openssl.installation.php\" target=\"_blank\">here for OpenSSL</a><br />";
+$net2ftp_messages["The <a href=\"http://www.php.net/manual/en/function.ssh2-sftp.php\" target=\"_blank\">SSH2 module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ssh2.installation.php\" target=\"_blank\">php.net</a><br />"] = "The <a href=\"http://www.php.net/manual/en/function.ssh2-sftp.php\" target=\"_blank\">SSH2 module of PHP</a> is not installed.<br /><br /> The administrator of this website should install this module. Installation instructions are given on <a href=\"http://www.php.net/manual/en/ssh2.installation.php\" target=\"_blank\">php.net</a><br />";
 $net2ftp_messages["Unable to connect to FTP server <b>%1\$s</b> on port <b>%2\$s</b>.<br /><br />Are you sure this is the address of the FTP server? This is often different from that of the HTTP (web) server. Please contact your ISP helpdesk or system administrator for help.<br />"] = "Nie mo¿na po³±czyæ siê z serwerem FTP <b>%1\$s</b> na porcie <b>%2\$s</b>.<br /><br />Czy jeste¶ pewny ¿e jest to adres serwera FTP? Czêsto serwer FTP ma inny adres ni¿ serwer HTTP. Skontaktuj siê z dostawc± internetu b±d¼ administratorem.<br />";
 $net2ftp_messages["Unable to login to FTP server <b>%1\$s</b> with username <b>%2\$s</b>.<br /><br />Are you sure your username and password are correct? Please contact your ISP helpdesk or system administrator for help.<br />"] = "Nie mo¿na zalogowaæ siê na serwer FTP<b>%1\$s</b> u¿ytkownik <b>%2\$s</b>.<br /><br />czy jeste¶ pewien ¿e nazwa u¿ytkownika i has³o s± poprawne? Skontaktuj siê z dostawc± internetu b±d¼ administratorem.<br />";
 $net2ftp_messages["Unable to switch to the passive mode on FTP server <b>%1\$s</b>."] = "Nie mo¿na prze³±czyæ siê w tryb pasywny na serwerze FTP <b>%1\$s</b>.";
@@ -263,6 +265,7 @@ $net2ftp_messages["The file <b>%1\$s</b> is too big to be moved, aborting the mo
 $net2ftp_messages["Unable to copy the file <b>%1\$s</b>"] = "Nie mo¿na skopiowaæ pliku <b>%1\$s</b>";
 $net2ftp_messages["Copied file <b>%1\$s</b>"] = "Copied file <b>%1\$s</b>";
 $net2ftp_messages["Unable to move the file <b>%1\$s</b>, aborting the move"] = "Unable to move the file <b>%1\$s</b>, aborting the move";
+$net2ftp_messages["Unable to move the file <b>%1\$s</b>"] = "Unable to move the file <b>%1\$s</b>";
 $net2ftp_messages["Moved file <b>%1\$s</b>"] = "Przesuniêto plik <b>%1\$s</b>";
 $net2ftp_messages["Unable to delete the file <b>%1\$s</b>"] = "Nie mo¿na skasowaæ pliku <b>%1\$s</b>";
 $net2ftp_messages["Deleted file <b>%1\$s</b>"] = "Skasowano plik <b>%1\$s</b>";
@@ -469,14 +472,15 @@ $net2ftp_messages["Default"] = "Domy¶lnie";
 
 
 // -------------------------------------------------------------------------
-// /skins/[skin]/footer.template.php and statusbar.template.php
+// /skins/[skin]/header.template.php and footer.template.php
 // -------------------------------------------------------------------------
 $net2ftp_messages["Help Guide"] = "Help Guide";
 $net2ftp_messages["Forums"] = "Forums";
 $net2ftp_messages["License"] = "Licencja";
 $net2ftp_messages["Powered by"] = "Obs³ugiwane przez";
 $net2ftp_messages["You are now taken to the net2ftp forums. These forums are for net2ftp related topics only - not for generic webhosting questions."] = "You are now taken to the net2ftp forums. These forums are for net2ftp related topics only - not for generic webhosting questions.";
-
+$net2ftp_messages["Standard"] = "Standard";
+$net2ftp_messages["Mobile"] = "Mobile";
 
 // -------------------------------------------------------------------------
 // Admin module
@@ -1059,18 +1063,10 @@ $net2ftp_messages["Should this link not be correct, enter the URL manually in yo
 if ($net2ftp_globals["state"] == "jupload") {
 // -------------------------------------------------------------------------
 $net2ftp_messages["Upload directories and files using a Java applet"] = "Upload directories and files using a Java applet";
-$net2ftp_messages["Number of files:"] = "Number of files:";
-$net2ftp_messages["Size of files:"] = "Size of files:";
-$net2ftp_messages["Add"] = "Add";
-$net2ftp_messages["Remove"] = "Remove";
-$net2ftp_messages["Upload"] = "Przy¶lij";
-$net2ftp_messages["Add files to the upload queue"] = "Add files to the upload queue";
-$net2ftp_messages["Remove files from the upload queue"] = "Remove files from the upload queue";
-$net2ftp_messages["Upload the files which are in the upload queue"] = "Upload the files which are in the upload queue";
-$net2ftp_messages["Maximum server space exceeded. Please select less/smaller files."] = "Maximum server space exceeded. Please select less/smaller files.";
-$net2ftp_messages["Total size of the files is too big. Please select less/smaller files."] = "Total size of the files is too big. Please select less/smaller files.";
-$net2ftp_messages["Total number of files is too high. Please select fewer files."] = "Total number of files is too high. Please select fewer files.";
-$net2ftp_messages["Note: to use this applet, Sun's Java plugin must be installed (version 1.4 or newer)."] = "Note: to use this applet, Sun's Java plugin must be installed (version 1.4 or newer).";
+$net2ftp_messages["Your browser does not support applets, or you have disabled applets in your browser settings."] = "Your browser does not support applets, or you have disabled applets in your browser settings.";
+$net2ftp_messages["To use this applet, please install the newest version of Sun's java. You can get it from <a href=\"http://www.java.com/\">java.com</a>. Click on Get It Now."] = "To use this applet, please install the newest version of Sun's java. You can get it from <a href=\"http://www.java.com/\">java.com</a>. Click on Get It Now.";
+$net2ftp_messages["The online installation is about 1-2 MB and the offline installation is about 13 MB. This 'end-user' java is called JRE (Java Runtime Environment)."] = "The online installation is about 1-2 MB and the offline installation is about 13 MB. This 'end-user' java is called JRE (Java Runtime Environment).";
+$net2ftp_messages["Alternatively, use net2ftp's normal upload or upload-and-unzip functionality."] = "Alternatively, use net2ftp's normal upload or upload-and-unzip functionality.";
 
 } // end jupload
 
@@ -1116,6 +1112,7 @@ $net2ftp_messages["Calculate the size of directories and files."] = "Calculate t
 $net2ftp_messages["FTP server"] = "Serwer FTP";
 $net2ftp_messages["Example"] = "Przyk³ad";
 $net2ftp_messages["Port"] = "Port";
+$net2ftp_messages["Protocol"] = "Protocol";
 $net2ftp_messages["Username"] = "U¿ytkownik";
 $net2ftp_messages["Password"] = "Has³o";
 $net2ftp_messages["Anonymous"] = "Anonimowo";
@@ -1236,31 +1233,6 @@ $net2ftp_messages["Use folder names (creates subdirectories automatically)"] = "
 
 
 // -------------------------------------------------------------------------
-// Update file module
-if ($net2ftp_globals["state"] == "updatefile") {
-// -------------------------------------------------------------------------
-$net2ftp_messages["Update file"] = "Aktualizuj plik";
-$net2ftp_messages["<b>WARNING: THIS FUNCTION IS STILL IN EARLY DEVELOPMENT. USE IT ONLY ON TEST FILES! YOU HAVE BEEN WARNED!"] = "<b>UWAGA: TA FUNKCJA JEST W STADIUM PROJEKTOWANIA. U¯YWAJ JEJ NA PLIKACH TESTOWYCH! ZOSTA£E¦ OSTRZE¯ONY!";
-$net2ftp_messages["Known bugs: - erases tab characters - doesn't work well with big files (> 50kB) - was not tested yet on files containing non-standard characters</b>"] = "Znane b³êdy: - kasuje znaki tabulacji - nie dzia³a poprawnie dla du¿ych plików (> 50kB) - nie by³a testowana na plikach zawieraj±cych niestandardowe znaki</b>";
-$net2ftp_messages["This function allows you to upload a new version of the selected file, to view what are the changes and to accept or reject each change. Before anything is saved, you can edit the merged files."] = "Ta funkcja pozwala na wys³anie nowej wesji pliku, przejrzenia jakie nast±pi³y zmiany, zaakceptowaæ lub odrzuciæ zmiany. Mo¿na edutowaæ i scaliæ pliki zanim zostan± zapisane.";
-$net2ftp_messages["Old file:"] = "Stary plik:";
-$net2ftp_messages["New file:"] = "Nowy plik:";
-$net2ftp_messages["Restrictions:"] = "Ograniczenia:";
-$net2ftp_messages["The maximum size of one file is restricted by net2ftp to <b>%1\$s kB</b> and by PHP to <b>%2\$s</b>"] = "Maksymalny rozmiar pliku ustawiony w  net2ftp to <b>%1\$s kB</b> i w PHP to <b>%2\$s</b>";
-$net2ftp_messages["The maximum execution time is <b>%1\$s seconds</b>"] = "Maksymalny czas wykonywania skryptu <b>%1\$s sekund</b>";
-$net2ftp_messages["The FTP transfer mode (ASCII or BINARY) will be automatically determined, based on the filename extension"] = "Tryb transferu FTP (ASCII or BINARY) bêdzie ustawiony automatycznie na podstawie rozszerzenia";
-$net2ftp_messages["If the destination file already exists, it will be overwritten"] = "Je¶li plik docelowy istnieje, zostanie nadpisany";
-$net2ftp_messages["You did not provide any files or archives to upload."] = "Nie wprowadzono ¿adnych plików/archiwów do wys³ania.";
-$net2ftp_messages["Unable to delete the new file"] = "Nie mozna skasowaæ nowego pliku";
-
-// printComparisonSelect()
-$net2ftp_messages["Please wait..."] = "Proszê czekaæ...";
-$net2ftp_messages["Select lines below, accept or reject changes and submit the form."] = "Zaznacz poni¿ej linie, akceptuj lub odrzuæ zmiany i wy¶lij formularz.";
-
-} // end updatefile
-
-
-// -------------------------------------------------------------------------
 // Upload module
 if ($net2ftp_globals["state"] == "upload") {
 // -------------------------------------------------------------------------
@@ -1294,7 +1266,7 @@ $net2ftp_messages["Upload more files and archives"] = "Wy¶lij wiêcej plików i ar
 if ($net2ftp_globals["state"] == "upload" || $net2ftp_globals["state"] == "jupload") {
 // -------------------------------------------------------------------------
 $net2ftp_messages["Restrictions:"] = "Ograniczenia:";
-$net2ftp_messages["The maximum size of one file is restricted by net2ftp to <b>%1\$s kB</b> and by PHP to <b>%2\$s</b>"] = "Maksymalny rozmiar pliku ustawiony w  net2ftp to <b>%1\$s kB</b> i w PHP to <b>%2\$s</b>";
+$net2ftp_messages["The maximum size of one file is restricted by net2ftp to <b>%1\$s</b> and by PHP to <b>%2\$s</b>"] = "Maksymalny rozmiar pliku ustawiony w  net2ftp to <b>%1\$s</b> i w PHP to <b>%2\$s</b>";
 $net2ftp_messages["The maximum execution time is <b>%1\$s seconds</b>"] = "Maksymalny czas wykonywania skryptu <b>%1\$s sekund</b>";
 $net2ftp_messages["The FTP transfer mode (ASCII or BINARY) will be automatically determined, based on the filename extension"] = "Tryb transferu FTP (ASCII or BINARY) bêdzie ustawiony automatycznie na podstawie rozszerzenia";
 $net2ftp_messages["If the destination file already exists, it will be overwritten"] = "Je¶li plik docelowy istnieje, zostanie nadpisany";
@@ -1314,7 +1286,7 @@ $net2ftp_messages["View Macromedia ShockWave Flash movie %1\$s"] = "View Macrome
 $net2ftp_messages["Image"] = "Image";
 
 // /skins/[skin]/view1.template.php
-$net2ftp_messages["Syntax highlighting powered by <a href=\"http://geshi.org\">GeSHi</a>"] = "Syntax highlighting powered by <a href=\"http://geshi.org\">GeSHi</a>";
+$net2ftp_messages["Syntax highlighting powered by <a href=\"http://luminous.asgaard.co.uk\">Luminous</a>"] = "Syntax highlighting powered by <a href=\"http://luminous.asgaard.co.uk\">Luminous</a>";
 $net2ftp_messages["To save the image, right-click on it and choose 'Save picture as...'"] = "Aby zapisaæ obraz, kliknij na obrazie przwym przyciskiem i wybierz 'Zapisz obraz jako...'";
 
 } // end view

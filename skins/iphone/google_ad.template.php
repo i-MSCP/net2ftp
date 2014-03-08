@@ -1,6 +1,6 @@
 <?php defined("NET2FTP") or die("Direct access to this location is not allowed."); ?>
 <!-- Template /skins/iphone/google_ad.template.php begin -->
-<?php if ($net2ftp_settings["show_google_ads"] == "yes") { ?>
+<?php if ($net2ftp_settings["show_ads"] == "yes") { ?>
 <div style="text-align: center;">
 <script type="text/javascript"><!--
 google_ad_client = "pub-8420366685399799";

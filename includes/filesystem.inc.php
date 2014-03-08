@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -2481,7 +2481,9 @@ function stripDirectory($directory) {
 function glueDirectories($part1, $part2) {
 
 // --------------
-// Returns the 2 dirs glued together in the format /home/dh1234/test (leading /, NO trailing /)
+// Returns the 2 dirs glued together in the format
+//    /home/dh1234/test                (leading /, NO trailing /)
+//    \\server\web\mysite.com\net2ftp
 // --------------
 
 // Strip leading and trailing / and \
@@ -3577,6 +3579,19 @@ function formatFilesize($filesize) {
 	$gb = 1073741824;   // Gigabyte
 	$tb = 1099511627776;// Terabyte
 
+// Check if the last character is a letter
+// Example: 8M = 8 Megabyte
+	$lastletter1 = strtolower(substr($filesize, -1));
+	$lastletter2 = strtolower(substr($filesize, -2));
+	if     ($lastletter1 == "k")  { $filesize = substr($filesize, 0, strlen($filesize)-1) * $kb; }
+	elseif ($lastletter1 == "m")  { $filesize = substr($filesize, 0, strlen($filesize)-1) * $mb; }
+	elseif ($lastletter1 == "g")  { $filesize = substr($filesize, 0, strlen($filesize)-1) * $gb; }
+	elseif ($lastletter1 == "t")  { $filesize = substr($filesize, 0, strlen($filesize)-1) * $tb; }
+	elseif ($lastletter2 == "kb") { $filesize = substr($filesize, 0, strlen($filesize)-2) * $kb; }
+	elseif ($lastletter2 == "mb") { $filesize = substr($filesize, 0, strlen($filesize)-2) * $mb; }
+	elseif ($lastletter2 == "gb") { $filesize = substr($filesize, 0, strlen($filesize)-2) * $gb; }
+	elseif ($lastletter2 == "tb") { $filesize = substr($filesize, 0, strlen($filesize)-2) * $tb; }
+
 // If it's less than a kb we just return the size, otherwise we keep going until
 //   the size is in the appropriate measurement range.
 	if($filesize == "") {
@@ -3585,13 +3600,13 @@ function formatFilesize($filesize) {
 	elseif($filesize < $kb) {
 		return $filesize . " B";
 	}
-	elseif($filesize< $mb) {
+	elseif($filesize < $mb) {
 		return round($filesize/$kb,2) . " kB";
 	}
-	elseif($filesize< $gb) {
+	elseif($filesize < $gb) {
 		return round($filesize/$mb,2) . " MB";
 	}
-	elseif($filesize< $tb) {
+	elseif($filesize < $tb) {
 		return round($filesize/$gb,2) . " GB";
 	}
 	else {

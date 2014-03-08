@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -213,10 +213,9 @@ function net2ftp_module_printBody() {
 	$nextscreen = 2;
 
 // Maxima
-	$max_filesize         = $net2ftp_settings["max_filesize"];
-	$max_filesize_net2ftp = $max_filesize / 1024;
-	$max_upload_filesize_php     = @ini_get("upload_max_filesize");
-	$max_execution_time          = @ini_get("max_execution_time");
+	$max_filesize            = formatFilesize($net2ftp_settings["max_filesize"]);
+	$max_upload_filesize_php = formatFilesize(@ini_get("upload_max_filesize"));
+	$max_execution_time      = @ini_get("max_execution_time");
 
 
 // -------------------------------------------------------------------------

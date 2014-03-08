@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //  | This program is free software; you can redistribute it and/or                 |
 //  | modify it under the terms of the GNU General Public License                   |
@@ -55,7 +55,7 @@ function getActivePlugins() {
 		if ($pluginProperties["jscalendar"]["use"] == "yes")   { $activePlugins[$plugincounter] = "jscalendar"; $plugincounter++; } 
 	}
 	elseif ($net2ftp_globals["state"] == "view") { 
-		if ($pluginProperties["geshi"]["use"] == "yes")		 { $activePlugins[$plugincounter] = "geshi"; $plugincounter++; } 
+		if ($pluginProperties["luminous"]["use"] == "yes")	 { $activePlugins[$plugincounter] = "luminous"; $plugincounter++; } 
 	}
 
 // -------------------------------------------------------------------------
@@ -153,15 +153,17 @@ function getPluginProperties() {
 	else                                          { $ckeditor_language = "en"; }
 
 	$pluginProperties["ckeditor"]["use"]                     = "yes";
-	$pluginProperties["ckeditor"]["label"]                   = "CKEditor";
+	$pluginProperties["ckeditor"]["label"]                   = "CKEditor (WYSIWYG)";
 	$pluginProperties["ckeditor"]["directory"]               = "ckeditor";
 	$pluginProperties["ckeditor"]["type"]                    = "textarea";
 	$pluginProperties["ckeditor"]["browsers"][1]             = "IE";
-	$pluginProperties["ckeditor"]["browsers"][2]             = "Mozilla";
-	$pluginProperties["ckeditor"]["browsers"][3]             = "Opera";
-	$pluginProperties["ckeditor"]["browsers"][4]             = "Other";
+	$pluginProperties["ckeditor"]["browsers"][2]             = "Chrome";
+	$pluginProperties["ckeditor"]["browsers"][3]             = "Safari";
+	$pluginProperties["ckeditor"]["browsers"][4]             = "Opera";
+	$pluginProperties["ckeditor"]["browsers"][5]             = "Mozilla";
+	$pluginProperties["ckeditor"]["browsers"][6]             = "Other";
 	$pluginProperties["ckeditor"]["filename_extensions"][1]  = "html";
-	$pluginProperties["ckeditor"]["includePhpFiles"][1]      = "ckeditor/ckeditor.php";
+	$pluginProperties["ckeditor"]["includePhpFiles"][1]      = "";
 	$pluginProperties["ckeditor"]["printJavascript"]         = "<script type=\"text/javascript\" src=\"" . $net2ftp_globals["application_rootdir_url"] . "/plugins/ckeditor/ckeditor.js\"></script>\n";
 	$pluginProperties["ckeditor"]["printCss"]                = "";
 	$pluginProperties["ckeditor"]["printBodyOnload"]         = "";
@@ -188,28 +190,29 @@ function getPluginProperties() {
 	elseif ($net2ftp_globals["language"] == "hu") { $tinymce_language = "hu"; }
 	elseif ($net2ftp_globals["language"] == "hu-utf") { $tinymce_language = "hu"; }
 	elseif ($net2ftp_globals["language"] == "it") { $tinymce_language = "it"; }
-	elseif ($net2ftp_globals["language"] == "ja") { $tinymce_language = "ja_euc-jp"; }
+	elseif ($net2ftp_globals["language"] == "ja") { $tinymce_language = "ja"; }
 	elseif ($net2ftp_globals["language"] == "nl") { $tinymce_language = "nl"; }
 	elseif ($net2ftp_globals["language"] == "pl") { $tinymce_language = "pl"; }
-	elseif ($net2ftp_globals["language"] == "pt") { $tinymce_language = "pt_br"; }
+	elseif ($net2ftp_globals["language"] == "pt") { $tinymce_language = "pt"; }
 	elseif ($net2ftp_globals["language"] == "ru") { $tinymce_language = "ru"; }
 	elseif ($net2ftp_globals["language"] == "sv") { $tinymce_language = "sv"; }
-	elseif ($net2ftp_globals["language"] == "tc") { $tinymce_language = "zh_tw"; }
+	elseif ($net2ftp_globals["language"] == "tc") { $tinymce_language = "zh-tw"; }
 	elseif ($net2ftp_globals["language"] == "tr") { $tinymce_language = "tr"; }
 	elseif ($net2ftp_globals["language"] == "ua") { $tinymce_language = "ru"; }
-	elseif ($net2ftp_globals["language"] == "ua") { $tinymce_language = "ru"; }
 	elseif ($net2ftp_globals["language"] == "vi") { $tinymce_language = "vi"; }
-	elseif ($net2ftp_globals["language"] == "zh") { $tinymce_language = "zh_cn"; }
+	elseif ($net2ftp_globals["language"] == "zh") { $tinymce_language = "zh-cn"; }
 	else                                          { $tinymce_language = "en"; }
 
 	$pluginProperties["tinymce"]["use"]                      = "yes";
-	$pluginProperties["tinymce"]["label"]                    = "TinyMCE";
+	$pluginProperties["tinymce"]["label"]                    = "TinyMCE (WYSIWYG)";
 	$pluginProperties["tinymce"]["directory"]                = "tinymce";
 	$pluginProperties["tinymce"]["type"]                     = "textarea";
 	$pluginProperties["tinymce"]["browsers"][1]              = "IE";
-	$pluginProperties["tinymce"]["browsers"][2]              = "Mozilla";
-	$pluginProperties["tinymce"]["browsers"][3]              = "Opera";
-	$pluginProperties["tinymce"]["browsers"][4]              = "Other";
+	$pluginProperties["tinymce"]["browsers"][2]              = "Chrome";
+	$pluginProperties["tinymce"]["browsers"][3]              = "Safari";
+	$pluginProperties["tinymce"]["browsers"][4]              = "Opera";
+	$pluginProperties["tinymce"]["browsers"][5]              = "Mozilla";
+	$pluginProperties["tinymce"]["browsers"][6]              = "Other";
 	$pluginProperties["tinymce"]["filename_extensions"][1]   = "html";
 	$pluginProperties["tinymce"]["includePhpFiles"][1]       = "";
 	$pluginProperties["tinymce"]["printJavascript"]          = "<script type=\"text/javascript\" src=\"" . $net2ftp_globals["application_rootdir_url"] . "/plugins/tinymce/tiny_mce.js\"></script>\n";
@@ -217,6 +220,7 @@ function getPluginProperties() {
 	$pluginProperties["tinymce"]["printJavascript"]         .= "	tinyMCE.init({\n";
 	$pluginProperties["tinymce"]["printJavascript"]         .= "		// General options\n";
 	$pluginProperties["tinymce"]["printJavascript"]         .= "		mode : \"exact\",\n";
+	$pluginProperties["tinymce"]["printJavascript"]         .= "		language : \"" . $tinymce_language . "\",\n";
 	$pluginProperties["tinymce"]["printJavascript"]         .= "		elements : \"text_splitted[middle]\",\n";
 	$pluginProperties["tinymce"]["printJavascript"]         .= "		theme : \"advanced\",\n";
 	$pluginProperties["tinymce"]["printJavascript"]         .= "		plugins : \"pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave\",\n";
@@ -258,38 +262,40 @@ function getPluginProperties() {
 
 
 // -------------------------------------------------------------------------
-// CodePress http://www.codepress.org/
+// Ace
 // A syntax highlighting text editor in javascript
 // -------------------------------------------------------------------------
 
-	$pluginProperties["codepress"]["use"]                    = "yes";
-	$pluginProperties["codepress"]["label"]                  = "CodePress";
-	$pluginProperties["codepress"]["directory"]              = "codepress";
-	$pluginProperties["codepress"]["type"]                   = "textarea";
-	$pluginProperties["codepress"]["browsers"][1]            = "IE";
-	$pluginProperties["codepress"]["browsers"][2]            = "Opera";
-	$pluginProperties["codepress"]["browsers"][3]            = "Mozilla";
-	$pluginProperties["codepress"]["browsers"][4]            = "Other";
-	$pluginProperties["codepress"]["filename_extensions"][1] = "asp";
-	$pluginProperties["codepress"]["filename_extensions"][2] = "css";
-	$pluginProperties["codepress"]["filename_extensions"][3] = "cgi";
-	$pluginProperties["codepress"]["filename_extensions"][4] = "htm";
-	$pluginProperties["codepress"]["filename_extensions"][5] = "html";
-	$pluginProperties["codepress"]["filename_extensions"][6] = "java";
-	$pluginProperties["codepress"]["filename_extensions"][7] = "javascript";
-	$pluginProperties["codepress"]["filename_extensions"][8] = "js";
-	$pluginProperties["codepress"]["filename_extensions"][9] = "pl";
-	$pluginProperties["codepress"]["filename_extensions"][10] = "perl";
-	$pluginProperties["codepress"]["filename_extensions"][11] = "php";
-	$pluginProperties["codepress"]["filename_extensions"][12] = "phps";
-	$pluginProperties["codepress"]["filename_extensions"][13] = "phtml";
-	$pluginProperties["codepress"]["filename_extensions"][14] = "ruby";
-	$pluginProperties["codepress"]["filename_extensions"][15] = "sql";
-	$pluginProperties["codepress"]["filename_extensions"][16] = "txt";
-	$pluginProperties["codepress"]["includePhpFiles"][1]     = "";
-	$pluginProperties["codepress"]["printJavascript"]        = "<script type=\"text/javascript\" src=\"" . $net2ftp_globals["application_rootdir_url"] . "/plugins/codepress/codepress.js\"></script>\n";
-	$pluginProperties["codepress"]["printCss"]               = "";
-	$pluginProperties["codepress"]["printBodyOnload"]        = "";
+	$pluginProperties["ace"]["use"]                    = "yes";
+	$pluginProperties["ace"]["label"]                  = "Ace (code editor)";
+	$pluginProperties["ace"]["directory"]              = "ace";
+	$pluginProperties["ace"]["type"]                   = "textarea";
+	$pluginProperties["ace"]["browsers"][1]            = "IE";
+	$pluginProperties["ace"]["browsers"][2]            = "Chrome";
+	$pluginProperties["ace"]["browsers"][3]            = "Safari";
+	$pluginProperties["ace"]["browsers"][4]            = "Opera";
+	$pluginProperties["ace"]["browsers"][5]            = "Mozilla";
+	$pluginProperties["ace"]["browsers"][6]            = "Other";
+	$pluginProperties["ace"]["filename_extensions"][1] = "asp";
+	$pluginProperties["ace"]["filename_extensions"][2] = "css";
+	$pluginProperties["ace"]["filename_extensions"][3] = "cgi";
+	$pluginProperties["ace"]["filename_extensions"][4] = "htm";
+	$pluginProperties["ace"]["filename_extensions"][5] = "html";
+	$pluginProperties["ace"]["filename_extensions"][6] = "java";
+	$pluginProperties["ace"]["filename_extensions"][7] = "javascript";
+	$pluginProperties["ace"]["filename_extensions"][8] = "js";
+	$pluginProperties["ace"]["filename_extensions"][9] = "pl";
+	$pluginProperties["ace"]["filename_extensions"][10] = "perl";
+	$pluginProperties["ace"]["filename_extensions"][11] = "php";
+	$pluginProperties["ace"]["filename_extensions"][12] = "phps";
+	$pluginProperties["ace"]["filename_extensions"][13] = "phtml";
+	$pluginProperties["ace"]["filename_extensions"][14] = "ruby";
+	$pluginProperties["ace"]["filename_extensions"][15] = "sql";
+	$pluginProperties["ace"]["filename_extensions"][16] = "txt";
+	$pluginProperties["ace"]["includePhpFiles"][1]     = "";
+	$pluginProperties["ace"]["printJavascript"]        = "<script type=\"text/javascript\" src=\"" . $net2ftp_globals["application_rootdir_url"] . "/plugins/ace/ace.js\"></script>\n";
+	$pluginProperties["ace"]["printCss"]               = "<style type=\"text/css\" media=\"screen\">#editor { position: absolute; top: 50px; right: 0; bottom: 0; left: 0; }</style>";
+	$pluginProperties["ace"]["printBodyOnload"]        = "";
 
 
 
@@ -304,9 +310,11 @@ function getPluginProperties() {
 	$pluginProperties["versioncheck"]["directory"]          = "versioncheck";
 	$pluginProperties["versioncheck"]["type"]               = "versioncheck";
 	$pluginProperties["versioncheck"]["browsers"][1]        = "IE";
-	$pluginProperties["versioncheck"]["browsers"][2]        = "Opera";
-	$pluginProperties["versioncheck"]["browsers"][3]        = "Mozilla";
-	$pluginProperties["versioncheck"]["browsers"][4]        = "Other";
+	$pluginProperties["versioncheck"]["browsers"][2]        = "Chrome";
+	$pluginProperties["versioncheck"]["browsers"][3]        = "Safari";
+	$pluginProperties["versioncheck"]["browsers"][4]        = "Opera";
+	$pluginProperties["versioncheck"]["browsers"][5]        = "Mozilla";
+	$pluginProperties["versioncheck"]["browsers"][6]        = "Other";
 	$pluginProperties["versioncheck"]["filename_extensions"][1] = "";
 	$pluginProperties["versioncheck"]["includePhpFiles"][1] = "";
 	$pluginProperties["versioncheck"]["printJavascript"]    = "<script type=\"text/javascript\" src=\"http://www.net2ftp.com/version.js\"></script>\n";
@@ -344,9 +352,11 @@ function getPluginProperties() {
 	$pluginProperties["jscalendar"]["directory"]              = "jscalendar";
 	$pluginProperties["jscalendar"]["type"]                   = "calendar";
 	$pluginProperties["jscalendar"]["browsers"][1]            = "IE";
-	$pluginProperties["jscalendar"]["browsers"][2]            = "Opera";
-	$pluginProperties["jscalendar"]["browsers"][3]            = "Mozilla";
-	$pluginProperties["jscalendar"]["browsers"][4]            = "Other";
+	$pluginProperties["jscalendar"]["browsers"][2]            = "Chrome";
+	$pluginProperties["jscalendar"]["browsers"][3]            = "Safari";
+	$pluginProperties["jscalendar"]["browsers"][4]            = "Opera";
+	$pluginProperties["jscalendar"]["browsers"][5]            = "Mozilla";
+	$pluginProperties["jscalendar"]["browsers"][6]            = "Other";
 	$pluginProperties["jscalendar"]["filename_extensions"][1] = "";
 	$pluginProperties["jscalendar"]["includePhpFiles"][1]     = "jscalendar/calendar.php";
 	$pluginProperties["jscalendar"]["printJavascript"]        = "<script type=\"text/javascript\" src=\"" . $net2ftp_globals["application_rootdir_url"] . "/plugins/jscalendar/calendar.js\"></script>\n";
@@ -367,9 +377,11 @@ function getPluginProperties() {
 	$pluginProperties["jupload"]["directory"]                = "jupload";
 	$pluginProperties["jupload"]["type"]                     = "applet";
 	$pluginProperties["jupload"]["browsers"][1]              = "IE";
-	$pluginProperties["jupload"]["browsers"][2]              = "Opera";
-	$pluginProperties["jupload"]["browsers"][3]              = "Mozilla";
-//	$pluginProperties["jupload"]["browsers"][4]            = "Other";
+	$pluginProperties["jupload"]["browsers"][2]              = "Chrome";
+	$pluginProperties["jupload"]["browsers"][3]              = "Safari";
+	$pluginProperties["jupload"]["browsers"][4]              = "Opera";
+	$pluginProperties["jupload"]["browsers"][5]              = "Mozilla";
+	$pluginProperties["jupload"]["browsers"][6]              = "Other";
 	$pluginProperties["jupload"]["filename_extensions"][1]   = "";
 	$pluginProperties["jupload"]["includePhpFiles"][1]       = "";
 	$pluginProperties["jupload"]["printCss"]                 = "";
@@ -378,23 +390,25 @@ function getPluginProperties() {
 
 
 // -------------------------------------------------------------------------
-// GeSHi
+// Luminous
 // Syntax highlighter
 // -------------------------------------------------------------------------
 
-	$pluginProperties["geshi"]["use"]                      = "yes";
-	$pluginProperties["geshi"]["label"]                    = "GeSHi";
-	$pluginProperties["geshi"]["directory"]                = "geshi";
-	$pluginProperties["geshi"]["type"]                     = "highlighter";
-	$pluginProperties["geshi"]["browsers"][1]              = "IE";
-	$pluginProperties["geshi"]["browsers"][2]              = "Opera";
-	$pluginProperties["geshi"]["browsers"][3]              = "Mozilla";
-	$pluginProperties["geshi"]["browsers"][4]              = "Other";
-	$pluginProperties["geshi"]["filename_extensions"][1]   = "";
-	$pluginProperties["geshi"]["includePhpFiles"][1]       = "geshi/geshi.php";
-	$pluginProperties["geshi"]["printCss"]                 = "";
-	$pluginProperties["geshi"]["printJavascript"]          = "";
-	$pluginProperties["geshi"]["printBodyOnload"]          = "";
+	$pluginProperties["luminous"]["use"]                     = "yes";
+	$pluginProperties["luminous"]["label"]                   = "Luminous";
+	$pluginProperties["luminous"]["directory"]               = "luminous";
+	$pluginProperties["luminous"]["type"]                    = "highlighter";
+	$pluginProperties["luminous"]["browsers"][1]             = "IE";
+	$pluginProperties["luminous"]["browsers"][2]             = "Chrome";
+	$pluginProperties["luminous"]["browsers"][3]             = "Safari";
+	$pluginProperties["luminous"]["browsers"][4]             = "Opera";
+	$pluginProperties["luminous"]["browsers"][5]             = "Mozilla";
+	$pluginProperties["luminous"]["browsers"][6]             = "Other";
+	$pluginProperties["luminous"]["filename_extensions"][1]  = "";
+	$pluginProperties["luminous"]["includePhpFiles"][1]      = "luminous/luminous.php";
+	$pluginProperties["luminous"]["printCss"]                = "";
+	$pluginProperties["luminous"]["printJavascript"]         = "";
+	$pluginProperties["luminous"]["printBodyOnload"]         = "";
 
 	return $pluginProperties;
 

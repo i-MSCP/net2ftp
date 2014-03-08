@@ -2,7 +2,7 @@
 
 //   -------------------------------------------------------------------------------
 //  |                  net2ftp: a web based FTP client                              |
-//  |              Copyright (c) 2003-2012 by David Gartner                         |
+//  |              Copyright (c) 2003-2013 by David Gartner                         |
 //  |                                                                               |
 //   -------------------------------------------------------------------------------
 //  |                                                                               |
@@ -71,7 +71,7 @@ $net2ftp_settings["allowed_addresses"][1] = "ALL";
 
 // ----------------------------------------------------------------------------------
 // Banned IP addresses or IP address ranges from which a user may not connect
-// Set the first entry to NONE, or enter a list of banned IP addresses
+// Set the first entry to NONE, or enter a list of banned IP addresses or IP address ranges
 // ----------------------------------------------------------------------------------
 
 $net2ftp_settings["banned_addresses"][1] = "NONE";
@@ -95,5 +95,4 @@ $net2ftp_settings["banned_keywords"][6] = "hsbc";
 $net2ftp_settings["banned_keywords"][7] = "halifax-online";
 $net2ftp_settings["banned_keywords"][8] = "lloydstsb";
 $net2ftp_settings["banned_keywords"][9] = "egg.com";
-
 ?>
