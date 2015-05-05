@@ -22,15 +22,15 @@
 // ------------------------------------------------------------------------
 // 1. Define the constants NET2FTP_APPLICATION_ROOTDIR and NET2FTP_APPLICATION_ROOTDIR_URL
 // ------------------------------------------------------------------------
-$server_protocol = "http://";
-if (isset($_SERVER["SERVER_PROTOCOL"]) == true && stripos($_SERVER["SERVER_PROTOCOL"], "https") !== false) { $server_protocol = "https://"; } 
+$http_scheme = "http://";
+if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == 'on') { $http_scheme = "https://"; }
 $http_host = "";
 if (isset($_SERVER["HTTP_HOST"]) == true) { $http_host = $_SERVER["HTTP_HOST"]; }
 $script_name = "/index.php";
 if (isset($_SERVER["SCRIPT_NAME"]) == true)  { $script_name = dirname($_SERVER["SCRIPT_NAME"]); }
 elseif (isset($_SERVER["PHP_SELF"]) == true) { $script_name = dirname($_SERVER["PHP_SELF"]); }
 define("NET2FTP_APPLICATION_ROOTDIR", dirname(__FILE__));
-define("NET2FTP_APPLICATION_ROOTDIR_URL", $server_protocol . $http_host . $script_name); 
+define("NET2FTP_APPLICATION_ROOTDIR_URL", $http_scheme . $http_host . $script_name);
 
 // ------------------------------------------------------------------------
 // 2. Include the file /path/to/net2ftp/includes/main.inc.php
