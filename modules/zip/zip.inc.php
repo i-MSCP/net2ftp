@@ -180,7 +180,7 @@ function net2ftp_module_printBody() {
 // Check the input data
 // --------------------
 // Filename
-		if ($zipactions["save"] == "yes" && $zipactions["save"]["filename"] == "") {
+		if ($zipactions["save"] == "yes" && $zipactions["save_filename"] == "") {
 			$errormessage = __("You did not enter a filename for the zipfile. Go back and enter a filename.") . "<br />";
 			setErrorVars(false, $errormessage, debug_backtrace(), __FILE__, __LINE__);
 			return false;
