@@ -42,6 +42,9 @@ $net2ftp_settings["fix_png"] = "yes";
 // MD5 salt and encryption string (change them to improve security)
 $net2ftp_settings["encryption_string"] = "{MD5_SALT_STRING}";
 
+// MD5 salt string for Stone PHP SafeCrypt
+$net2ftp_settings["md5_salt"] = "{MD5_SALT_STRING}";
+
 // ----------------------------------------------------------------------------------
 // Admin Panel username and password
 // If no password is set, the Admin panel will not be accessible by anyone
