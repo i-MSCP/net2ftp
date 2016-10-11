@@ -33,7 +33,7 @@ $net2ftp_settings["check_authorization"] = "yes";
 // ----------------------------------------------------------------------------------
 
 //$net2ftp_settings["allowed_ftpservers"][1] = "ALL";
-$net2ftp_settings["allowed_ftpservers"][1] = "localhost";
+$net2ftp_settings["allowed_ftpservers"][1] = "127.0.0.1";
 //$net2ftp_settings["allowed_ftpservers"][2] = "192.168.1.1";
 //$net2ftp_settings["allowed_ftpservers"][3] = "ftp.mydomain2.org";
 
